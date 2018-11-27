@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Roberto Weidmann Menezes - Portfolio',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -29,4 +29,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
