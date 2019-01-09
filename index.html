@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porfolio Roberto Menezes</title>
-    <link rel="shortcut icon" href="computer.png">
+    <link rel="shortcut icon" href="images/computer.png">
 
-    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css">
-    <link rel="stylesheet" href="github-activity.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
@@ -19,16 +16,15 @@
     <header class="header">
         <div class="container">
             <div class="col-sm-12 col-md-2 col-lg-2">
-                <img class="pull-left img-responsive img-circle center-block" src="photo.png" alt="Roberto Weidmann Menezes" />
+                <img class="pull-left img-responsive img-circle center-block" src="images/photo.jpg" alt="Roberto Weidmann Menezes" />
             </div>
             <div class="col-sm-12 col-md-10 col-lg-10 profile-content pull-left">
                 <h1 class="name">Roberto Weidmann Menezes</h1>
                 <p class="desc">Software Engineer</p>
                 <ul class="social list-inline">
-                    <li><a href="https://twitter.com/robertowm" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.facebook.com/robertowm" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/robertowm" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.li nkedin.com/in/robertowm" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="https://github.com/robertowm" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+                    <li><a href="files/CV - Roberto Weidmann Menezes.pdf"><i class="fa fa-file-pdf-o"></i></a></li>
                     <li><a href="mailto:robertowm@gmail.com"><i class="fa fa-envelope"></i></a></li>
                 </ul>
             </div><!--//profile-->
@@ -42,8 +38,59 @@
                     <div class="section-inner">
                         <h2 class="heading">About Me</h2>
                         <div class="content">
-                            <p>Computer scientist with experience in design and development of data-oriented solutions. Interested in big data, search engines, data pipelines, data analysis, software engineering and distributed systems. </p>
-                            <p>Currently, I am Software Engineer at SLI Systems, an amazing company related to enterprise eCommerce solutions. Also, I am improving my knowledge in big data and data mining through online courses and self-study.</p>
+                            <p>
+                                Computer scientist with experience in design and development of data-oriented solutions.
+                                Interested in big data, search engines, data pipelines, data analysis, software engineering and distributed systems.
+                            </p>
+                            <p>
+                                Currently, I am Software Engineer at SLI Systems, an amazing company related to enterprise eCommerce solutions.
+                                Also, I am improving my knowledge in big data and data mining through online courses and self-study.
+                            </p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </section><!--//section-->
+
+                <section class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Work Experience</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title">Software Engineer - <span class="place"><a href="https://www.sli-systems.com/">SLI Systems</a></span> <span class="year">(2016 - Present)</span></h3>
+                                <p>As a member of Indexing Team, I worked in the development and maintenance of core solutions related to Full-Text Search and its indexing process. Our team goals were to provide the best eCommerce Search solution and ensure our customers' data are correctly processed and available for search.</p>
+                                <p>The most relevant project was <span class="project-name">Dory</span>, the Full-Text Search solution used by its clients. Its technology stack was Java 8, Apache Lucene, Apache Solr, and Grizzly. One of the most important achievements I participated was prototyping a highly optimized Dory version for Near Real Time Indexing relying on Apache Kafka and several microservices for transforming, monitoring and inserting data to search servers.</p>
+                                <p>Also, I maintained a project called <span class="project-name">SearchBuilder</span>, data processing pipeline responsible for consuming clients' data and transforming it into valid Search Indexes. Its technology stack was Java 8, RabbitMQ and CDH, Cloudera's distribution of Apache Hadoop.</p>
+                            </div>
+                            
+                            <div class="item">
+                                <h3 class="title">Software Engineer - <span class="place"><a href="https://www.stone.com.br/">Stone</a></span> <span class="year">(2016)</span></h3>
+                                <p>As a member of Backoffice Team, I worked in the development of public APIs, web applications and internal services. As a team, we improved our solutions in a proactive approach, as we analyzed our customers using Full Story and Intercom to improve our features. Also, we were a fast-paced agile team using Kanban, supported by Jira, and Gitflow.</p>
+                                <p>The most relevant project was <span class="project-name">Portal</span>, a new website where Stone clients can manage and validate their transactions. This project consisted of a UI using AngularJS, several microservices written in NodeJS and C#, and data stored on SQL Server. Before leaving the company, I developed prototypes using Redis and RethinkDB to improve overall performance.</p>
+                            </div>
+
+                            <div class="item">
+                                <h3 class="title">Technical Lead & Senior Development Analyst - <span class="place"><a href="http://www.cortex-intelligence.com/">Cortex Intelligence</a></span> <span class="year">(2012 - 2015)</span></h3>
+                                <p>As technical lead, I was responsible for technical decisions and development of Java and NodeJS scalable cloud-based platforms for data processing, including text enrichment, web crawlers, search and storage solutions. As senior development analyst, I audited the company’s BI platform and developed Java crawler solutions to our customers.</p>
+                                <p>My main project was <span class="project-name">DataStore</span>, a data eCommerce to Cortex’s BI solution to manage and process distinct data types from internal and external providers. Its main features were real-time subscription simulation, historical purchase, and real-time data distribution. It is a cloud-based platform using Amazon cloud solutions, e.g., EC2, Elastic Beanstalk, RDS and S3. Its technology stack was Java, Spring, NodeJS, AngularJS, RabbitMQ, Elasticsearch, PostgreSQL and RethinkDB.</p>
+                                <p>My last project was a new cloud-based data processing pipeline to crawl and transform data to <span class="project-name">DataStore</span>. Its main goal was to unify all data sources provided by Cortex Intelligence in one solution. Data pipeline was developed using Spring XD, RabbitMQ and PostgreSQL. Crawlers were developed on Python using Scrapy and custom solutions written on Java. Integration between crawlers and the data pipeline relied on AWS SQS and AWS Kinesis. Elasticsearch and Kibana were used to monitor data quality and errors.</p>
+                            </div>
+
+                            <div class="item">
+                                <h3 class="title">Co-founder - <span class="place">Novo Ideal</span> <span class="year">(2011 - 2013)</span></h3>
+                                <p>As co-founder, I managed and developed web and mobile solutions, both using lean principles and emergent technologies, e.g. Google cloud solutions (Google App Engine and Google Cloud SQL) and Amazon cloud storage (AWS S3).</p>
+                                <p>My most relevant project was <span class="project-name">DurmAki</span>, a cloud-based solution to rent rooms for students and events, e.g., carnival and conferences. It was implemented using Play Framework and deployed on Google cloud infrastructure.</p>
+                            </div>
+
+                            <div class="item">
+                                <h3 class="title">Master's Degree Student - <span class="place"><a href="http://www.ic.uff.br/index.php/en-GB/">Universidade Federal Fluminense</a></span> <span class="year">(2009 - 2011)</span></h3>
+                                <p>As Master's Degree student, I researched about Software Engineering, Model-Driven Development and Metamodel's validation and verification. I was a member of the λSE Research Group at UFF (http://lse.ic.uff.br). In the end, we had three publications related to my research.</p>
+                                <p>As a secondary role, I worked as a researcher on projects related to Model-Driven Development and Metamodel's validation and verification in oilfield (Schlumberger Brasil Research & Geoengineering Center) and mobile industries (APPI Tecnologia S/A).</p>
+                            </div>
+
+                            <div class="item">
+                                <h3 class="title">Systems Analyst - <span class="place"><a href="http://www.sti.uff.br/">Universidade Federal Fluminense</a></span> <span class="year">(2008 - 2010)</span></h3>
+                                <p>As systems analyst, I developed web systems in Java (JSP, JSF, JBoss Seam, Spring, JPA, Hibernate, AspectJ, Maven, Primefaces, Richfaces) and other technologies (SVN, Trac, Postgres, Oracle Database). A few months before leaving, I had the opportunity to manage a team using SCRUM.</p>
+                                <p>My most relevant projects were <span class="project-name">IdUFF</span> and <span class="project-name">PIBIC</span>. <span class="project-name">IdUFF</span> was the academic system at UFF and I worked at the online class enrollment, with around 5000 students accessing during one week each semester. <span class="project-name">PIBIC</span> is the institutional scientific initiation scholarship program given by CNPQ and I worked managing and developing a web system to manage all scholarship available at UFF.</p>
+                            </div>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
@@ -58,7 +105,7 @@
                                 <p class="summary"></p>
                                 <div class="featured-image">
                                     <a href="http://www.cortex-intelligence.com/explore" target="_blank">
-                                        <img class="img-responsive project-image" src="project-datastore.png" alt="Project: DataStore" />
+                                        <img class="img-responsive project-image" src="images/project-datastore.png" alt="Project: DataStore" />
                                     </a>
                                 </div>
 
@@ -97,96 +144,8 @@
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
-
-                <section class="projects section hidden">
-                    <div class="section-inner">
-                        <h2 class="heading">Other Projects</h2>
-                        <div class="content">
-                            <div class="item">
-                                <p class="title">Project Title Cras Lacus</p>
-                                <p class="summary">Provide a brief description of your project. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatu.</p>
-                                <p><a class="more-link" href="3" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <p class="title">Project Title Cras eget lacus<span class="label label-theme">Open Source</span></p>
-                                <p class="summary">Provide a brief description of your project. Maecenas ornare ultricies risus, in fermentum augue consectetur in. Vestibulum vitae mauris iaculis, sollicitudin velit in, molestie nulla. </p>
-                                <p><a class="more-link" href="#" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <p class="title">Project Title Maecenas Ornare<span class="label label-theme">Open Source</span></p>
-                                <p class="summary">Provide a brief description of your project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel purus enim. Etiam tortor felis, fermentum ac ultrices sed.</p>
-                                <p><a class="more-link" href="#" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
-                            </div><!--//item-->
-                            <a class="btn btn-info more-github" href="https://github.com/robertowm">More on GitHub <i class="fa fa-chevron-right"></i></a>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
-
-                <section class="experience section">
-                    <div class="section-inner">
-                        <h2 class="heading">Work Experience</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="https://www.sli-systems.com/">SLI Systems</a></span> <span class="year">(2016 - Present)</span></h3>
-                                <p>As a member of Indexing Team, development and maintenance of two SLI core solutions: Search Engine called Dory; and a data processing pipeline for client data, called SearchBuilder. </p>
-                                <p>Our main goal as a team is to provide the best search solution and ensure our customers' data are correctly processed and available for search.</p>
-                            </div>
-                            
-                            <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="https://www.stone.com.br/">Stone</a></span> <span class="year">(2016)</span></h3>
-                                <p>As member of Backoffice Team, development of public APIs , web applications and internal services. As a team, we improved our solutions in a proactive approach, as we analyzed our customers using Full Story and Intercom to improve our features.  Also, we were a fast-paced agile team using Kanban, supported by Jira, and Gitflow.</p>
-                            </div>
-
-                            <div class="item">
-                                <h3 class="title">Technical Lead - <span class="place"><a href="http://www.cortex-intelligence.com/">Cortex Intelligence</a></span> <span class="year">(2012 - 2015)</span></h3>
-                                <p>Responsible for technical decisions and development of a scalable cloud-based platform for data processing, including efficient storage and delivery. Most relevant projects is DataStore and a new pipeline to collect data. DataStore is a platform to aggregate, enrich, store and distribute structured and non-structured data, as detailed in "Projects" section. Recently, we developed a new pipeline to collect non-structured data, where we collect and extract data to be delivered to DataStore. </p>
-                                <p>Responsible for technical decisions of IntelliFeed, which is a subdivision to back-end solutions of products team. It includes text enrichment, search and storage solutions.</p>
-                                <p>Analysis and audit of products and solutions provided by Cortex Intelligence.</p>
-                                <p>Development of web crawlers and refactoring of existing projects to meet new requirements, as performance, maintainability and new features.</p>
-                                <p>Research of new technologies to improve our products.</p>
-                            </div>
-
-                            <div class="item">
-                                <h3 class="title">Co-founder - <span class="place">Novo Ideal</span> <span class="year">(2011 - 2013)</span></h3>
-                                <p>Management and development of web and mobile solutions, both using lean principles and emergent technologies, e.g. Google cloud solutions (Google App Engine and Google Cloud SQL) and Amazon cloud storage (AWS S3).</p>
-                                <p>Most relevant project was DurmAki, a cloud-based solution to rent rooms for students and events, e.g., carnival and conferences. More details available in "Projects" section.</p>
-                            </div>
-
-                            <div class="item">
-                                <h3 class="title">Senior Development Analyst - <span class="place"><a href="http://www.cortex-intelligence.com/">Cortex Intelligence</a></span> <span class="year">(2012 - 2012)</span></h3>
-                                <p>Analysis and audit of products and solutions provided by Cortex Intelligence. Development of web crawlers and refactoring of existing projects to meet new requirements, as performance, maintainability and new features. Research of new technologies to improve our products.</p>
-                            </div>
-
-                            <div class="item">
-                                <h3 class="title">Master's Degree Student - <span class="place"><a href="http://www.ic.uff.br/index.php/en-GB/">Universidade Federal Fluminense</a></span> <span class="year">(2009 - 2011)</span></h3>
-                                <p>Research about Software Engineering, Model-Driven Development and Metamodel's validation and verification. I was a member of the λSE Research Group at UFF (http://lse.ic.uff.br). In the end, we had three publications related to my research. Also, it was applied in oilfield (Schlumberger Brasil Research & Geoengineering Center) and mobile industries (APPI Tecnologia S/A).</p>
-                            </div>
-
-                            <div class="item">
-                                <h3 class="title">Systems Analyst - <span class="place"><a href="http://www.sti.uff.br/">Universidade Federal Fluminense</a></span> <span class="year">(2008 - 2010)</span></h3>
-                                <p>Web development in Java (JSP, JSF, JBoss Seam, Spring, JPA, Hibernate, AspectJ, Maven, Primefaces, Richfaces) and other technologies (SVN, Trac, Postgres, Oracle Database). Team management using SCRUM.</p>
-                                <p>Most relevant projects were IdUFF and PIBIC. IdUFF is the academic system at UFF and I worked at the online class enrollment, with around 5000 students accessing during one week each semester. PIBIC is the institutional scientific initiation scholarship program given by CNPQ and I worked managing and developing a web system to manage all scholarship available at UFF.</p>
-                            </div>
-
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
-
-                <section class="github section">
-                    <div class="section-inner">
-                        <h2 class="heading">My GitHub</h2>
-                        <div class=" calendar github-graph">
-                            <!-- Loading stuff -->
-                            Loading the data just for you.
-                        </div>
-                        <div id="feed" class="ghfeed">
-                        </div>
-
-                    </div><!--//secton-inner-->
-                </section><!--//section-->
-
-
             </div>
+
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
                 <aside class="info aside section">
                     <div class="section-inner">
@@ -200,7 +159,7 @@
                     </div><!--//section-inner-->
                 </aside><!--//aside-->
 
-                <aside class="skills aside section">
+                <aside class="skills aside section hidden">
                     <div class="section-inner">
                         <h2 class="heading">Skills</h2>
                         <div class="content">
@@ -258,16 +217,63 @@
                         <div class="content">
                             <div class="item">
                                 <h3 class="title"><i class="fa fa-graduation-cap"></i> MSc in Computer Science</h3>
-                                <small class="university">Universidade Federal Fluminenese <span class="year">(2009-2011)</span></small>
+                                <small class="university"><i class="fa fa-university"></i>Fluminense Federal University</small>
+                                <small class="year"><i class="fa fa-calendar-o"></i>2009 - 2011</small>
                             </div>
                             <div class="item">
                                 <h3 class="title"><i class="fa fa-graduation-cap"></i> BSc in Computer Science</h3>
-                                <small class="university">Universidade Federal Fluminenese <span class="year">(2004-2009)</span></small>
+                                <small class="university"><i class="fa fa-university"></i>Fluminense Federal University</small>
+                                <small class="year"><i class="fa fa-calendar-o"></i>2004 - 2009</small>
                             </div>
                         </div>
                     </div>
                 </aside>
 
+                <aside class="education aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Top 5 Certifications</h2>
+                        <div class="content">
+                            <div class="item">
+                                <a href="https://www.coursera.org/account/accomplishments/specialization/EF8B6H8PTL2Y">
+                                    <h3 class="title"><i class="fa fa-graduation-cap"></i>Data Mining Specialization</h3>
+                                    <small class="university"><i class="fa fa-university"></i>University of Illinois at Urbana-Champaign</small>
+                                    <small class="university"><i class="fa fa-university"></i>Coursera</small>
+                                    <small class="year"><i class="fa fa-calendar-o"></i>October 2015</small>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://www.lynda.com/ViewCertificate/9D91595977874A1583AEC6D69A7BDDA4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate">
+                                    <h3 class="title"><i class="fa fa-graduation-cap"></i>Data Science Foundations: Data Engineering</h3>
+                                    <small class="university"><i class="fa fa-university"></i>Lynda.com</small>
+                                    <small class="year"><i class="fa fa-calendar-o"></i>April 2017</small>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://www.coursera.org/account/accomplishments/records/SSARJVWZKU">
+                                    <h3 class="title"><i class="fa fa-graduation-cap"></i>Functional Programming Principles in Scala</h3>
+                                    <small class="university"><i class="fa fa-university"></i>École Polytechnique Fédérale de Lausanne</small>
+                                    <small class="university"><i class="fa fa-university"></i>Coursera</small>
+                                    <small class="year"><i class="fa fa-calendar-o"></i>June 2014</small>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://s3.amazonaws.com/edu-cert.10gen.com/downloads/e0333cbdf6fa468689042a1f1273e462/Certificate.pdf">
+                                    <h3 class="title"><i class="fa fa-graduation-cap"></i>M101J: MongoDB for Java Developers</h3>
+                                    <small class="university"><i class="fa fa-university"></i>Mongo University</small>
+                                    <small class="year"><i class="fa fa-calendar-o"></i>December 2014</small>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <h3 class="title"><i class="fa fa-graduation-cap"></i>Sun Certified Programmer for the Java Platform, Standard Edition 6 certification</h3>
+                                    <small class="university"><i class="fa fa-university"></i>Sun Microsystems</small>
+                                    <small class="year"><i class="fa fa-calendar-o"></i>March 2009</small>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="external-link"><a class="more-link" href="https://www.linkedin.com/in/robertowm"><i class="fa fa-external-link"></i> More on LinkedIn</a></p>
+                    </div>
+                </aside>
 
                 <aside class="languages aside section">
                     <div class="section-inner">
@@ -276,15 +282,24 @@
                             <ul class="list-unstyled">
                                 <li class="item">
                                     <span class="title"><strong>Portuguese:</strong></span>
-                                    <span class="level">Native Speaker <br class="visible-sm visible-xs"/><i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> </span>
+                                    <span class="level">Native Speaker</span>
+                                    <span class="stars">
+                                        <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i>
+                                    </span>
                                 </li><!--//item-->
                                 <li class="item">
                                     <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Working proficiency <br class="visible-xs"/><i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> </span>
+                                    <span class="level">Working proficiency</span>
+                                    <span class="stars">
+                                        <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i> <i class="fa fa-star lang-class"></i>
+                                    </span>
                                 </li><!--//item-->
                                 <li class="item">
                                     <span class="title"><strong>Spanish:</strong></span>
-                                    <span class="level">Elementary Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star lang-class"></i>
+                                    <span class="level">Elementary Proficiency</span>
+                                    <span class="stars">
+                                        <i class="fa fa-star lang-class"></i>
+                                    </span>
                                 </li><!--//item-->
                             </ul>
                         </div><!--//content-->
@@ -315,18 +330,8 @@
     </footer><!--//footer-->
     </div>
 
-
-    <script type="text/javascript" src="jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-    <script src="github-calendar.min.js"></script>
-    <script>
-        GitHubCalendar(".calendar", "robertowm");
-    </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-    <script type="text/javascript" src="github-activity.js"></script>
-    <script>
-        GitHubActivity.feed({ username: "robertowm", selector: "#feed" });
-    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

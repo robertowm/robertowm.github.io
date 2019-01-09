@@ -266,3 +266,24 @@ footer p {
 .fixed-icon {
   width: 10px;
 }
+
+.education .item small {
+  display: block;
+}
+
+.education .item i {
+  margin-right: 5px;
+}
+
+.education .item small i {
+  width: 15px;
+}
+
+.external-link {
+  margin-top: 20px;
+}
+
+span.project-name {
+  font-style: italic;
+  color: #434343;
+}
