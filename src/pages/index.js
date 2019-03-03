@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Image from '../components/image'
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 const IndexPage = () => (
   <Layout>
     <h1>Hi people</h1>
