@@ -6,41 +6,45 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import './layout.css'
 
+const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+      }
+    }
+  }
+`
+
+const style = {
+  margin: '0 auto',
+  maxWidth: 960,
+  padding: '0px 1.0875rem 1.45rem',
+  paddingTop: 0,
+}
+
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-          }
-        }
-      }
-    `}
-    render={data => (
+    query={query}
+    render={({
+      site: {
+        siteMetadata: { title, description, keywords },
+      },
+    }) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={title}
           meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: data.site.siteMetadata.keywords },
+            { name: 'description', content: description },
+            { name: 'keywords', content: keywords },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
+        <Header siteTitle={title} />
+        <div style={style}>{children}</div>
       </>
     )}
   />
