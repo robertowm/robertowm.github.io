@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: robertowm/robertowm.github.io
   branch: dev
 publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
