@@ -4,7 +4,7 @@ backend:
   branch: dev
 publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
-public_folder: "/images/uploads" 
+public_folder: "/images/uploads"
 
 collections:
   - name: "post"
@@ -13,20 +13,85 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
 
   - label: "Pages"
     name: "pages"
     files:
-      - label: "About Page"
-        name: "about"
-        file: "data/content/about.yml"
+      - label: "About Me"
+        name: "about-me"
+        file: "data/content/about-me.yml"
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Body, name: body, widget: markdown}
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "about-me",
+            }
+          - { label: "Full Name", name: "full_name", widget: "string" }
+          - { label: "Summary", name: "summary", widget: "text" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Profile URL", name: "profile_url", widget: "string" }
+          - {
+              label: "Photo",
+              name: "photo",
+              widget: "image",
+              allow_multiple: "false",
+            }
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Reference", name: "ref", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
+      - label: "Qualifications"
+        name: "qualifications"
+        file: "data/content/qualifications.yml"
+        fields:
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "qualifications",
+            }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+              - {
+                  label: "Start Year",
+                  name: "start_year",
+                  widget: "date",
+                  format: "YYYY",
+                }
+              - {
+                  label: "End Year",
+                  name: "end_year",
+                  widget: "date",
+                  format: "YYYY",
+                }
+          - label: "Certifications"
+            name: "certifications"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - {
+                  label: "Date",
+                  name: "date",
+                  widget: "date",
+                  format: "MM YYYY",
+                }
+              - { label: "URL", name: "url", widget: "string" }
+              - label: "Institutions"
+                name: "institutions"
+                widget: "list"
+                field: { label: "Name", name: "name", widget: "string" }
