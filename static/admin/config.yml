@@ -27,24 +27,20 @@ collections:
         name: "about-me"
         file: "data/content/about-me.yml"
         fields:
-          - {
-              label: "Layout",
-              name: "layout",
-              widget: "hidden",
-              default: "about-me",
-            }
+          - label: "Layout"
+            name: "layout"
+            widget: "hidden"
+            default: "about-me"
           - { label: "Full Name", name: "full_name", widget: "string" }
           - { label: "Summary", name: "summary", widget: "markdown" }
           - { label: "Address", name: "address", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Profile URL", name: "profile_url", widget: "string" }
           - { label: "CV URL", name: "cv_url", widget: "string" }
-          - {
-              label: "Photo",
-              name: "photo",
-              widget: "image",
-              allow_multiple: "false",
-            }
+          - label: "Photo"
+            name: "photo"
+            widget: "image"
+            allow_multiple: "false"
           - label: "Links"
             name: "links"
             widget: "list"
@@ -55,43 +51,74 @@ collections:
         name: "qualifications"
         file: "data/content/qualifications.yml"
         fields:
-          - {
-              label: "Layout",
-              name: "layout",
-              widget: "hidden",
-              default: "qualifications",
-            }
+          - label: "Layout"
+            name: "layout"
+            widget: "hidden"
+            default: "qualifications"
           - label: "Education"
             name: "education"
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Institution", name: "institution", widget: "string" }
-              - {
-                  label: "Start Year",
-                  name: "start_year",
-                  widget: "date",
-                  format: "YYYY",
-                }
-              - {
-                  label: "End Year",
-                  name: "end_year",
-                  widget: "date",
-                  format: "YYYY",
-                }
+              - label: "Start Year"
+                name: "start_year"
+                widget: "date"
+                format: "YYYY"
+              - label: "End Year"
+                name: "end_year"
+                widget: "date"
+                format: "YYYY"
           - label: "Certifications"
             name: "certifications"
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - {
-                  label: "Date",
-                  name: "date",
-                  widget: "date",
-                  format: "MM YYYY",
-                }
+              - label: "Date"
+                name: "date"
+                widget: "date"
+                format: "MM YYYY"
               - { label: "URL", name: "url", widget: "string" }
               - label: "Institutions"
                 name: "institutions"
                 widget: "list"
                 field: { label: "Name", name: "name", widget: "string" }
+      - label: "Work Experiences"
+        name: "work-experiences"
+        file: "data/content/work-experiences.yml"
+        fields:
+          - label: "Layout"
+            name: "layout"
+            widget: "hidden"
+            default: "work-experiences"
+          - label: "Work Experience"
+            name: "work-experience"
+            widget: "list"
+            fields:
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Position", name: "position", widget: "string" }
+              - label: "Start Year"
+                name: "start_year"
+                widget: "date"
+                format: "YYYY"
+                required: true
+              - label: "End Year"
+                name: "end_year"
+                widget: "date"
+                format: "YYYY"
+              - { label: "Summary", name: "summary", widget: "markdown" }
+      - label: "Projects"
+        name: "projects"
+        file: "data/content/projects.yml"
+        fields:
+          - label: "Layout"
+            name: "layout"
+            widget: "hidden"
+            default: "projects"
+          - label: "Project"
+            name: "project"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Company", name: "position", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "markdown" }
