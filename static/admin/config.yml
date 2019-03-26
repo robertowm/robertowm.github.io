@@ -3,8 +3,8 @@ backend:
   repo: robertowm/robertowm.github.io
   branch: dev
 publish_mode: editorial_workflow
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "post"
@@ -35,29 +35,6 @@ collections:
       - { label: "Company", name: "company", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Summary", name: "summary", widget: "markdown" }
-  - name: "work-experiences"
-    label: "Work Experiences"
-    folder: "data/work-experiences"
-    create: true
-    identifier_field: "company"
-    fields:
-      - label: "Layout"
-        name: "layout"
-        widget: "hidden"
-        default: "work-experiences"
-      - { label: "Company", name: "company", widget: "string" }
-      - { label: "URL", name: "url", widget: "string" }
-      - { label: "Position", name: "position", widget: "string" }
-      - label: "Start Year"
-        name: "start_year"
-        widget: "date"
-        format: "YYYY"
-        required: true
-      - label: "End Year"
-        name: "end_year"
-        widget: "date"
-        format: "YYYY"
       - { label: "Summary", name: "summary", widget: "markdown" }
   - label: "Pages"
     name: "pages"

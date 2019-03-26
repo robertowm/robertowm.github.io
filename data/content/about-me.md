@@ -12,7 +12,7 @@ address: 'Christchurch, New Zealand'
 email: robertowm@gmail.com
 profile_url: 'https://robertowm.github.io'
 cv_url: 'https://robertowm.github.io/files/CV - Roberto Weidmann Menezes.pdf'
-photo: /images/uploads/photo.jpg
+photo: /uploads/photo.jpg
 links:
   - name: LinkedIn
     url: 'https://www.linkedin.com/in/robertowm'

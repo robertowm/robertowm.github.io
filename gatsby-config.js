@@ -13,28 +13,57 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/data/content/`,
+        path: `${__dirname}/static/uploads`,
+        name: 'uploads',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/data/content`,
+        name: 'content'
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/data/projects/`,
-        name: "projects",
+        name: 'projects',
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data/posts/`,
+        name: 'posts',
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Roberto Weidmann Menezes portfolio',
+        short_name: 'robertowm',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
