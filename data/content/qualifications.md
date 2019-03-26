@@ -1,3 +1,4 @@
+---
 education:
   - end_year: '2011'
     institution: Fluminense Federal University
@@ -40,3 +41,4 @@ certifications:
       Sun Certified Programmer for the Java Platform, Standard Edition 6
       certification
     url: '#'
+---
