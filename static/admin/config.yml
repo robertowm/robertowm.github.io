@@ -25,18 +25,46 @@ collections:
     create: true
     identifier_field: "name"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "project" }
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "project",
+        }
       - { label: "Name", name: "name", widget: "string", required: true }
       - { label: "Company", name: "company", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Summary", name: "summary", widget: "markdown" }
+  - name: "work-experiences"
+    label: "Work Experiences"
+    folder: "data/work-experiences"
+    create: true
+    identifier_field: "company"
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "work-experiences"
+      - { label: "Company", name: "company", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - label: "Start Year"
+        name: "start_year"
+        widget: "date"
+        format: "YYYY"
+        required: true
+      - label: "End Year"
+        name: "end_year"
+        widget: "date"
+        format: "YYYY"
       - { label: "Summary", name: "summary", widget: "markdown" }
   - label: "Pages"
     name: "pages"
     files:
       - label: "About Me"
         name: "about-me"
-        file: "data/content/about-me.yml"
+        file: "data/content/about-me.md"
         fields:
           - label: "Layout"
             name: "layout"
@@ -60,7 +88,7 @@ collections:
               - { label: "URL", name: "url", widget: "string" }
       - label: "Qualifications"
         name: "qualifications"
-        file: "data/content/qualifications.yml"
+        file: "data/content/qualifications.md"
         fields:
           - label: "Layout"
             name: "layout"
@@ -94,28 +122,3 @@ collections:
                 name: "institutions"
                 widget: "list"
                 field: { label: "Name", name: "name", widget: "string" }
-      - label: "Work Experiences"
-        name: "work-experiences"
-        file: "data/content/work-experiences.yml"
-        fields:
-          - label: "Layout"
-            name: "layout"
-            widget: "hidden"
-            default: "work-experiences"
-          - label: "Work Experience"
-            name: "work-experience"
-            widget: "list"
-            fields:
-              - { label: "Company", name: "company", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
-              - { label: "Position", name: "position", widget: "string" }
-              - label: "Start Year"
-                name: "start_year"
-                widget: "date"
-                format: "YYYY"
-                required: true
-              - label: "End Year"
-                name: "end_year"
-                widget: "date"
-                format: "YYYY"
-              - { label: "Summary", name: "summary", widget: "markdown" }
