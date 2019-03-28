@@ -8,22 +8,34 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 export const query = graphql`
 query {
-  contentYaml {
-    summary,
-    address,
-    email,
-    profile_url,
-    cv_url,
-    photo,
-    links {
-      name
-      url
+  allMarkdownRemark(
+    filter: {
+      frontmatter: {
+        layout: { eq: "about-me"}
+      }
+    },
+    limit: 1
+  ) {
+    edges {
+      node {
+        frontmatter {
+          full_name
+          summary
+          address
+          email
+          profile_url
+          cv_url
+          photo
+          layout
+        }
+      }
     }
   }
 }
 `;
 
-const IndexPage = ({ data: { contentYaml: content } }) => {
+const IndexPage = ({ data: { allMarkdownRemark: { edges } } }) => {
+  const content = edges[0].node.frontmatter;
   const summaryEntries = content.summary.split('\n').map(summary => (<p>{summary}</p>));
   return (
     <Layout>
