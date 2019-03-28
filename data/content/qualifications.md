@@ -1,4 +1,5 @@
 ---
+layout: qualifications
 education:
   - end_year: '2011'
     institution: Fluminense Federal University

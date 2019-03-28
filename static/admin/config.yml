@@ -13,7 +13,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
@@ -25,12 +25,7 @@ collections:
     create: true
     identifier_field: "name"
     fields:
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "hidden",
-          default: "project",
-        }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project" }
       - { label: "Name", name: "name", widget: "string", required: true }
       - { label: "Company", name: "company", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
@@ -43,10 +38,7 @@ collections:
         name: "about-me"
         file: "data/content/about-me.md"
         fields:
-          - label: "Layout"
-            name: "layout"
-            widget: "hidden"
-            default: "about-me"
+          - { name: "layout", widget: "hidden", default: "about-me" }
           - { label: "Full Name", name: "full_name", widget: "string" }
           - { label: "Summary", name: "summary", widget: "markdown" }
           - { label: "Address", name: "address", widget: "string" }
@@ -67,10 +59,7 @@ collections:
         name: "qualifications"
         file: "data/content/qualifications.md"
         fields:
-          - label: "Layout"
-            name: "layout"
-            widget: "hidden"
-            default: "qualifications"
+          - { name: "layout", widget: "hidden", default: "qualifications" }
           - label: "Education"
             name: "education"
             widget: "list"
@@ -103,10 +92,7 @@ collections:
         name: "work-experiences"
         file: "data/content/work-experiences.md"
         fields:
-          - label: "Layout"
-            name: "Layout"
-            widget: "hidden"
-            default: "work-experiences"
+          - { name: "layout", widget: "hidden", default: "work-experiences" }
           - label: "Work Experience"
             name: "work-experience"
             widget: "list"

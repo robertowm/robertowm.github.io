@@ -1,4 +1,5 @@
 ---
+layout: work-experiences
 work-experience:
   - company: SLI Systems
     end_year: Invalid date
