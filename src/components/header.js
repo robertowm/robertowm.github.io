@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 const Header = ({ siteTitle }) => {
+  
   const navbarStyle = {
     background: 'rebeccapurple',
     marginBottom: '1.45rem',

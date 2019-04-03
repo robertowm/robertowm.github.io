@@ -2,9 +2,9 @@
 layout: work-experiences
 work-experience:
   - company: SLI Systems
-    end_year: Invalid date
+    end_year: ''
     position: Software Engineer
-    start_year: '2019'
+    start_year: '2016'
     summary: >-
       As a member of Indexing Team, I worked in the development and maintenance
       of core solutions related to Full-Text Search and its indexing process.

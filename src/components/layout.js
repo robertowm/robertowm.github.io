@@ -2,8 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Header from './header'
+
+import 'bootstrap/dist/css/bootstrap.css'
 import './layout.css'
 
 const query = graphql`
@@ -18,12 +21,12 @@ const query = graphql`
   }
 `
 
-const style = {
-  margin: '0 auto',
-  maxWidth: 960,
-  padding: '0px 1.0875rem 1.45rem',
-  paddingTop: 0,
-}
+const Main = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0;
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -44,7 +47,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={title} />
-        <div style={style}>{children}</div>
+        <Main>{children}</Main>
       </>
     )}
   />
