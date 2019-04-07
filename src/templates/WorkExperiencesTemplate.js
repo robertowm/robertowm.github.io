@@ -37,7 +37,7 @@ export default ({ entries }) => {
     );
 
     return (
-        <div className="p-3 my-2" style={containerStyle}>
+        <div className="p-3 mt-2" style={containerStyle}>
             <h4>Work experience</h4>
             {parsedEntries}
         </div>
