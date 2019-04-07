@@ -23,15 +23,15 @@ export const IconLink = styled.a`
     min-width: 32px;
     background-color: rebeccapurple;
     border-radius: 50%;
-    padding: 0 5px;
-    margin: 0 5px;
+    padding: 0px;
+    margin: 0 2px;
     display: flex;
     align-items: center;
     justify-content: center;
 `;
 
-const BaseIcon = ({ icon, color }) =>
-    <FontAwesomeIcon style={{ fontSize: "20px", color: color }} icon={icon} />;
+const BaseIcon = ({ icon, color, style }) =>
+    <FontAwesomeIcon style={{ ...style, fontSize: "20px", color: color }} icon={icon} />;
 
 const Wrapper = styled.div`
     background-color: white;
@@ -39,9 +39,6 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     min-height: 32px;
-    * {
-        margin: 0 5px;
-    }
     width: 100%;
 `;
 

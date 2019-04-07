@@ -17,22 +17,22 @@ export default ({fullName, body, address, email, cvUrl, photo, links }) => {
     return (
         <div className="p-3" style={containerStyle}>
             <Row className="px-md-1">
-                <Col md="4" className="text-center mb-3">
+                <Col lg="3" md="4" className="text-center mb-3">
                     <Img fluid={photo.fluid} className="rounded img-thumbnail" alt={fullName} />
                 </Col>
-                <Col md="8">
+                <Col lg="9" md="8">
                     <div className="text-left text-md-justify" dangerouslySetInnerHTML={{ __html: body }} />
                 </Col>
             </Row>
             <Row>
-                <Col md="4" sm="6" xs="12" className="my-2">
+                <Col lg="3" md="4" sm="6" xs="12" className="my-2">
                     <IconList>
                         {links.map(({ name, url }, index) => <ClicableIcon url={url} icon={mapNameToIcon(name)} key={index} />)}
                         <ClicableIcon url={cvUrl} icon={mapNameToIcon("PDF")} />
                         <ClicableIcon url={"mailto:" + email} icon={mapNameToIcon("Email")} />
                     </IconList>
                 </Col>
-                <Col md="8" sm="6" xs="12" className="my-2">
+                <Col lg="9" md="8" sm="6" xs="12" className="my-2">
                     <Icon className="justify-content-center justify-content-md-start" icon="map-marker-alt">{address}</Icon>
                 </Col>
             </Row>
