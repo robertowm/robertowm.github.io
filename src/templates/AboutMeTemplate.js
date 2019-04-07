@@ -20,7 +20,7 @@ export default ({fullName, body, address, email, cvUrl, photo, links }) => {
                     <img src={photo} className="rounded img-thumbnail" alt={fullName} />
                 </Col>
                 <Col md="8">
-                    <div className="text-justify" dangerouslySetInnerHTML={{ __html: body }} />
+                    <div className="text-left text-md-justify" dangerouslySetInnerHTML={{ __html: body }} />
                 </Col>
             </Row>
             <Row>
@@ -31,8 +31,8 @@ export default ({fullName, body, address, email, cvUrl, photo, links }) => {
                         <ClicableIcon url={"mailto:" + email} icon={mapNameToIcon("Email")} />
                     </IconList>
                 </Col>
-                <Col md="4" sm="6" xs="12" className="my-2">
-                    <Icon icon="map-marker-alt">{address}</Icon>
+                <Col md="8" sm="6" xs="12" className="my-2">
+                    <Icon className="justify-content-center justify-content-md-start" icon="map-marker-alt">{address}</Icon>
                 </Col>
             </Row>
         </div>

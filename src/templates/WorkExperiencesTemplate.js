@@ -18,7 +18,7 @@ const WorkExperience = ({ position, company, url, summary, startYear, endYear })
                 <div><a style={{ color: "black" }} href={url}>{company}</a></div>
             </Col>
             <Col md="3" sm="12">
-                <DateRange className="text-right" begin={startYear} end={endYear} />
+                <DateRange className="text-md-right" begin={startYear} end={endYear} />
             </Col>
         </Row>
         <HtmlBlock className="d-none d-md-block" body={processor(summary)} />

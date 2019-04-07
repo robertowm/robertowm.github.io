@@ -21,8 +21,7 @@ export const IconLink = styled.a`
     height: 32px;
     width: 32px;
     min-width: 32px;
-    background-color: white;
-    border: 1px solid #dee2e6;
+    background-color: rebeccapurple;
     border-radius: 50%;
     padding: 0 5px;
     margin: 0 5px;
@@ -31,12 +30,11 @@ export const IconLink = styled.a`
     justify-content: center;
 `;
 
-const BaseIcon = ({ icon }) =>
-    <FontAwesomeIcon style={{ fontSize: "20px", color: "#0099cc" }} icon={icon} />;
+const BaseIcon = ({ icon, color }) =>
+    <FontAwesomeIcon style={{ fontSize: "20px", color: color }} icon={icon} />;
 
 const Wrapper = styled.div`
     background-color: white;
-    border: 1px solid #dee2e6;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -47,7 +45,11 @@ const Wrapper = styled.div`
     width: 100%;
 `;
 
-export const Icon = ({ icon, children }) => <Wrapper><BaseIcon icon={icon} style={{ margin: "5px" }} />{children}</Wrapper>;
+export const Icon = ({ icon, children, className }) => 
+    <Wrapper className={className}>
+        <BaseIcon icon={icon} color="rebeccapurple" style={{ margin: "5px" }} />
+        {children}
+    </Wrapper>;
 
 export const ClicableIcon = ({ icon, url }) =>
-    <IconLink href={url}><BaseIcon icon={icon} /></IconLink>;
+    <IconLink href={url}><BaseIcon icon={icon} color="white" /></IconLink>;
