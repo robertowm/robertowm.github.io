@@ -12,7 +12,7 @@ const processor = function () {
 
 const WorkExperience = ({ position, company, url, summary, startYear, endYear }) => {
     return <>
-        <Row style={{ fontSize: "14px" }} className="">
+        <Row style={{ fontSize: "14px" }}>
             <Col md="9" sm="12">
                 {position.split('&').map(elem => <div className="font-weight-bold">{elem.trim()}</div>)}
                 <div><a style={{ color: "black" }} href={url}>{company}</a></div>

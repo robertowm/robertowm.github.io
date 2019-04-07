@@ -1,7 +1,7 @@
 ---
 layout: about-me
 full_name: Roberto Weidmann Menezes
-address: 'Christchurch, New Zealand'
+address: 'Christchurch, NZ'
 email: robertowm@gmail.com
 profile_url: 'https://robertowm.github.io'
 cv: '/uploads/CV - Roberto Weidmann Menezes.pdf'
