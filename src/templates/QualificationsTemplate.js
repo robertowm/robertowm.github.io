@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import { IconList, ClicableIcon, Icon } from '../components/icon';
 import { style as containerStyle } from '../components/block';
+import { DateRange } from '../components/date';
 
 export default ({ education, certifications }) => {
 
@@ -19,7 +20,7 @@ export default ({ education, certifications }) => {
                     <div style={{ fontSize: "14px" }}>
                         <div className="font-weight-bold">{title}</div>
                         <div>{institution}</div>
-                        <div>{start_year} - {end_year}</div>
+                        <DateRange begin={start_year} end={end_year} />
                     </div>
                 )}
 
@@ -28,8 +29,10 @@ export default ({ education, certifications }) => {
                 <h4>Most relevant certifications</h4>
                 {certifications.map(({ name, institutions, url, date }) =>
                     <div style={{ fontSize: "14px" }}>
-                        <a href={url}><div className="font-weight-bold">{name}</div></a>
-                        <div>{institutions.join(', ')}</div>
+                        <a href={url} style={{ color: "black" }}>
+                            <div className="font-weight-bold">{name}</div>
+                        </a>
+                        {institutions.map(elem => <div>{elem}</div>)}
                         <div>{date}</div>
                     </div>
                 )}

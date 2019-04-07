@@ -22,12 +22,12 @@ const IndexPage = ({ data }) => {
           links={aboutMeData.links} />
 
           <Row className="no-gutters">
-            <Col md="7" className="pr-md-2">
+            <Col md="7" sm="12" className="pr-md-2">
               <WorkExperiencesTemplate
                 entries={data.workExperiences.frontmatter.work_experience}
               />
             </Col>
-            <Col md="5">
+            <Col md="5" sm="12">
               <QualificationsTemplate
                 education={data.qualifications.frontmatter.education}
                 certifications={data.qualifications.frontmatter.certifications}
