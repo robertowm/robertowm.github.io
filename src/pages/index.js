@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
           email={aboutMeData.email}
           profileUrl={aboutMeData.profile_url}
           cvUrl={aboutMeData.cv_url}
-          photo={aboutMeData.photo}
+          photo={aboutMeData.photo.childImageSharp}
           links={aboutMeData.links} />
 
           <Row className="no-gutters">
@@ -51,7 +51,13 @@ query IndexPageTemplate {
       email
       profile_url
       cv
-      photo
+      photo {
+        childImageSharp {
+          fluid(maxWidth: 300, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       links {
         name
         url

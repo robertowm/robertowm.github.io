@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import { IconList, ClicableIcon, Icon } from '../components/icon';
 import { style as containerStyle } from '../components/block';
+import Img from "gatsby-image";
 
 const mapNameToIcon = (name) => {
     if (name === 'GitHub') return ["fab", "github"];
@@ -17,7 +18,7 @@ export default ({fullName, body, address, email, cvUrl, photo, links }) => {
         <div className="p-3" style={containerStyle}>
             <Row className="px-md-1">
                 <Col md="4" className="text-center mb-3">
-                    <img src={photo} className="rounded img-thumbnail" alt={fullName} />
+                    <Img fluid={photo.fluid} className="rounded img-thumbnail" alt={fullName} />
                 </Col>
                 <Col md="8">
                     <div className="text-left text-md-justify" dangerouslySetInnerHTML={{ __html: body }} />
