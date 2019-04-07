@@ -6,12 +6,12 @@ export const style = {
     borderRadius: "5px",
 }
 
-export const TextBlock = ({ content }) =>
-    <div className="text-justify" style={{ fontSize: "13px" }}>{content}</div>
+export const TextBlock = ({ content, className }) =>
+    <div className={`text-justify ${className}`} style={{ fontSize: "13px" }}>{content}</div>
 
-export const HtmlBlock = ({ body }) =>
+export const HtmlBlock = ({ body, className }) =>
     <div
-        className="text-justify d-none d-md-block"
+        className={`text-justify ${className}`}
         style={{ fontSize: "13px" }}
         dangerouslySetInnerHTML={{ __html: body }}
     />
