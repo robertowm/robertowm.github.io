@@ -1,38 +1,53 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import { Container, Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, Collapse } from 'reactstrap'
 import styled from 'styled-components'
 
-const Header = ({ siteTitle }) => {
-  
-  const navbarStyle = {
-    background: 'rebeccapurple',
-    marginBottom: '1.45rem',
+class Header extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
   }
 
-  const innerNavbarStyle = {
-    margin: '0 auto',
-    maxWidth: 960,
-    padding: '1.45rem 1.0875rem',
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
 
-  const titleStyle = { margin: 0 }
+  render() {
+    const { siteTitle } = this.props;
+    const NavLink = ({ to, name, className, style }) =>
+      <Link to={to} style={{ color: 'white', textDecoration: 'none', ...style }} className={`nav-link ${className}`}>
+        {name}
+      </Link>;
 
-  const linkStyle = {
-    color: 'white',
-    textDecoration: 'none',
+    return (
+      <Navbar expand="sm" dark className="sticky-top" style={{ backgroundColor: 'rebeccapurple' }}>
+        <Container>
+          <NavbarBrand>
+            <Link to="/" style={{ color: 'white', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{siteTitle}</Link>
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink to="/" name="About me" />
+              </NavItem>
+              <NavItem>
+                <NavLink to="/blog" name="Blog" />
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Container>
+      </Navbar >
+    )
   }
-
-  return (
-    <div style={navbarStyle}>
-      <div style={innerNavbarStyle}>
-        <h1 style={titleStyle}>
-          <Link to="/" style={linkStyle}>
-            {siteTitle}
-          </Link>
-        </h1>
-      </div>
-    </div>
-  )
 }
 
 export default Header

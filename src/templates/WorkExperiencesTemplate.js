@@ -21,10 +21,6 @@ class WorkExperience extends Component {
         this.setState(state => ({ collapse: !state.collapse }));
     }
 
-    icon() {
-        return this.state.collapse ? 'chevron-circle-up' : 'chevron-circle-down';
-    }
-
     render() {
         const { position, company, url, summary, startYear, endYear } = this.props;
         const processor = this.props.processor || (text => text);
@@ -40,11 +36,14 @@ class WorkExperience extends Component {
                     <DateRange className="text-md-right" begin={startYear} end={endYear} />
                 </Col>
             </Row>
-            <div className="d-none d-md-block">
-                <HtmlBlock body={processor(mainSummary)} className="mb-0"/>
-                { !this.state.collapse ? <div className="text-right mb-4" style={{fontSize: "14px"}}><a onClick={this.toggle}>Click here for more details...</a></div> : null }
+            <div className="d-none d-md-block" style={{ fontSize: "13px" }}>
+                <p>
+                    {mainSummary}
+                    &nbsp;
+                    <a onClick={this.toggle} style={{ cursor: "pointer", fontFamily: "monospace" }}>[{this.state.collapse ? '-' : '+'}]</a>
+                </p>
                 <Collapse isOpen={this.state.collapse}>
-                    <HtmlBlock body={processor(expandableSummary.join("\n"))} />
+                    <HtmlBlock body={processor(expandableSummary.join('\n'))} />
                 </Collapse>
             </div>
         </>;
