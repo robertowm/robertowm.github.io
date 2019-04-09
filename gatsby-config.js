@@ -75,13 +75,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        policy: [{ userAgent: '*', disallow: ['/admin/', '/404'], }]
+        policy: [{ userAgent: '*', disallow: ['/admin/', '/404', '/404.html'], }]
       }
     },
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        exclude: ['/admin/*', '/404'],
+        exclude: ['/admin/*', '/404', '/404.html'],
         sitemapSize: 5000,
       },
     },
