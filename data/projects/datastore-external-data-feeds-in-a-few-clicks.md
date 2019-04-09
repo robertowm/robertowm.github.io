@@ -6,7 +6,7 @@ company: Cortex Intelligence
 year: 2015
 summary: Cloud-based platform to aggregate, enrich, store and distribute structured and non-structured data, as crawled news, indexes and social media posts.
 url: 'http://www.cortex-intelligence.com/explore'
-thumbnail: /uploads/project-datastore.png
+thumbnail: '/uploads/project_datastore.png'
 ---
 Cloud-based platform to aggregate, enrich, store and distribute structured and
 non-structured data, as crawled news, indexes and social media posts.
