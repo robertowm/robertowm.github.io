@@ -53,6 +53,7 @@ class WorkExperience extends Component {
 export default ({ entries }) => {
     const parsedEntries = entries.map(({ position, company, url, summary, start_year, end_year }, index) =>
         <WorkExperience
+            key={index}
             position={position}
             company={company}
             url={url}

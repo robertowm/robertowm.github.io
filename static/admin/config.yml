@@ -27,7 +27,10 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "project" }
       - { label: "Name", name: "name", widget: "string", required: true }
+      - { label: "Short name", name: "short_name", widget: "string", required: true }
       - { label: "Company", name: "company", widget: "string" }
+      - { label: "Year", name: "year", widget: "date", format: "YYYY" }
+      - { label: "Summary", name: "summary", widget: "string" }
       - { label: "URL", name: "url", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }

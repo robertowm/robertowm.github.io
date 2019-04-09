@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import AboutMeTemplate from '../templates/AboutMeTemplate';
 import QualificationsTemplate from '../templates/QualificationsTemplate';
 import WorkExperiencesTemplate from '../templates/WorkExperiencesTemplate';
+import ProjectsTemplate from '../templates/ProjectsTemplate';
 
 const IndexPage = ({ data }) => {
   const aboutMeData = data.aboutMe.frontmatter;
@@ -21,19 +22,20 @@ const IndexPage = ({ data }) => {
           photo={aboutMeData.photo.childImageSharp}
           links={aboutMeData.links} />
 
-          <Row className="no-gutters">
-            <Col md="7" sm="12" className="pr-md-2">
-              <WorkExperiencesTemplate
-                entries={data.workExperiences.frontmatter.work_experience}
-              />
-            </Col>
-            <Col md="5" sm="12">
-              <QualificationsTemplate
-                education={data.qualifications.frontmatter.education}
-                certifications={data.qualifications.frontmatter.certifications}
-              />
-            </Col>
-          </Row>
+        <Row className="no-gutters">
+          <Col md="7" sm="12" className="pr-md-2">
+            <WorkExperiencesTemplate
+              entries={data.workExperiences.frontmatter.work_experience}
+            />
+            <ProjectsTemplate entries={data.projects.edges} />
+          </Col>
+          <Col md="5" sm="12">
+            <QualificationsTemplate
+              education={data.qualifications.frontmatter.education}
+              certifications={data.qualifications.frontmatter.certifications}
+            />
+          </Col>
+        </Row>
       </Container>
     </Layout>
   );
@@ -89,6 +91,30 @@ query IndexPageTemplate {
         url
         start_year
         end_year
+      }
+    }
+  }
+  projects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { glob: "**/data/projects/*.md" } }
+      sort: { fields: [frontmatter___year, frontmatter___title], order: [DESC, ASC] }
+    ) {
+    edges {
+      node {
+        fields {
+          path
+        }
+        frontmatter {
+          short_name
+          company
+          summary
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
       }
     }
   }

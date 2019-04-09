@@ -1,7 +1,10 @@
 ---
 layout: project
 name: IdUFF
+short_name: IdUFF
 company: Universidade Federal Fluminense
+year: 2010
+summary: Internal academic web system, focused on providing solution to its students, e.g., online class enrollment and class management.
 url: 'https://inscricao.id.uff.br/'
 thumbnail: /uploads/project-iduff.png
 ---
