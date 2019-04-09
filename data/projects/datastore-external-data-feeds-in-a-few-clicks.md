@@ -3,6 +3,7 @@ layout: project
 name: 'DataStore: External data feeds in a few clicks'
 short_name: DataStore
 company: Cortex Intelligence
+year: 2015
 summary: Cloud-based platform to aggregate, enrich, store and distribute structured and non-structured data, as crawled news, indexes and social media posts.
 url: 'http://www.cortex-intelligence.com/explore'
 thumbnail: /uploads/project-datastore.png
