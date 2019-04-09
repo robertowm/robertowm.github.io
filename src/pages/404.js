@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container } from 'reactstrap';
-import Layout from '../components/layout';
+import React from 'react'
+import { Container } from 'reactstrap'
+import Layout from '../components/layout'
 
 const NotFoundPage = () => (
   <Layout>
@@ -11,4 +11,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default NotFoundPage;
+export default NotFoundPage

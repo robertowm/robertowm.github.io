@@ -1,37 +1,64 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import { Container, Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, Collapse } from 'reactstrap'
+import {
+  Container,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Nav,
+  NavItem,
+  Collapse,
+} from 'reactstrap'
 import styled from 'styled-components'
 
 class Header extends Component {
-
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
-      isOpen: false
-    };
+      isOpen: false,
+    }
   }
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
-    });
+      isOpen: !this.state.isOpen,
+    })
   }
 
   render() {
-    const { siteTitle } = this.props;
-    const NavLink = ({ to, name, className, style }) =>
-      <Link to={to} style={{ color: 'white', textDecoration: 'none', ...style }} className={`nav-link ${className}`}>
+    const { siteTitle } = this.props
+    const NavLink = ({ to, name, className, style }) => (
+      <Link
+        to={to}
+        style={{ color: 'white', textDecoration: 'none', ...style }}
+        className={`nav-link ${className}`}
+      >
         {name}
-      </Link>;
+      </Link>
+    )
 
     return (
-      <Navbar expand="sm" dark className="sticky-top" style={{ backgroundColor: 'rebeccapurple' }}>
+      <Navbar
+        expand="sm"
+        dark
+        className="sticky-top"
+        style={{ backgroundColor: 'rebeccapurple' }}
+      >
         <Container>
           <NavbarBrand>
-            <Link to="/" style={{ color: 'white', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{siteTitle}</Link>
+            <Link
+              to="/"
+              style={{
+                color: 'white',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+            >
+              {siteTitle}
+            </Link>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -45,7 +72,7 @@ class Header extends Component {
             </Nav>
           </Collapse>
         </Container>
-      </Navbar >
+      </Navbar>
     )
   }
 }

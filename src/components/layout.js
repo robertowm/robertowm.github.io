@@ -23,7 +23,7 @@ const query = graphql`
 
 const Main = styled.div`
   padding-top: 5px;
-`;
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
