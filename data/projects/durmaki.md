@@ -6,7 +6,7 @@ company: Novo Ideal
 year: 2013
 summary: Cloud-based solution to rent rooms, aggregated by universities or events, e.g., carnival and World Youth Day.
 url: 'https://www.facebook.com/DurmAki'
-thumbnail: /uploads/project-durmaki.jpg
+thumbnail: /uploads/project-durmaki.jpeg
 ---
 Cloud-based solution to rent rooms, aggregated by universities or events,
 e.g., carnival and World Youth Day.
