@@ -63,8 +63,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Roberto Weidmann Menezes portfolio',
-        short_name: 'robertowm',
+        name: 'Roberto Weidmann Menezes website',
+        short_name: 'RWM',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
@@ -141,8 +141,6 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-netlify-cms',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 };
