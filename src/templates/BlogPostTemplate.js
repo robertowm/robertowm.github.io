@@ -1,10 +1,20 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Container, Row, Col, Badge } from 'reactstrap';
 
 import Layout from '../components/layout';
 import { style as containerStyle, HtmlBlock } from '../components/block';
 import { breadcrumbGenerator } from '../components/breadcrumb';
+
+export const OneLineBlogPostTemplate = ({ node: { fields, frontmatter } }) =>
+    <div className="px-3 pt-2 mt-2" style={containerStyle}>
+        <h5>
+            <span className="mr-2">Latest post ({new Date(frontmatter.date).toDateString()}):</span>
+            <Link to={fields.path}>
+                {frontmatter.title} {frontmatter.tags.map(tag => <Badge className="mx-1">{tag}</Badge>)}
+            </Link>
+        </h5>
+    </div>;
 
 export default ({ data: { markdownRemark: content } }) => {
     const { title, date, tags } = content.frontmatter;

@@ -1,12 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Container, Row, Col } from 'reactstrap'
+import _ from 'lodash';
 
 import Layout from '../components/layout'
 import AboutMeTemplate from '../templates/AboutMeTemplate';
 import QualificationsTemplate from '../templates/QualificationsTemplate';
 import WorkExperiencesTemplate from '../templates/WorkExperiencesTemplate';
 import ProjectsTemplate from '../templates/ProjectsTemplate';
+import { OneLineBlogPostTemplate } from '../templates/BlogPostTemplate';
 
 const IndexPage = ({ data }) => {
   const aboutMeData = data.aboutMe.frontmatter;
@@ -21,6 +23,8 @@ const IndexPage = ({ data }) => {
           cvUrl={aboutMeData.cv_url}
           photo={aboutMeData.photo.childImageSharp}
           links={aboutMeData.links} />
+
+        <OneLineBlogPostTemplate node={_.first(data.latestBlogPost.edges).node} />
 
         <Row className="no-gutters">
           <Col md="7" sm="12" className="pr-md-2">
@@ -95,9 +99,9 @@ query IndexPageTemplate {
     }
   }
   projects: allMarkdownRemark(
-      filter: { fileAbsolutePath: { glob: "**/data/projects/*.md" } }
-      sort: { fields: [frontmatter___year, frontmatter___title], order: [DESC, ASC] }
-    ) {
+    filter: { fileAbsolutePath: { glob: "**/data/projects/*.md" } }
+    sort: { fields: [frontmatter___year, frontmatter___title], order: [DESC, ASC] }
+  ) {
     edges {
       node {
         fields {
@@ -114,6 +118,24 @@ query IndexPageTemplate {
               }
             }
           }
+        }
+      }
+    }
+  }
+  latestBlogPost: allMarkdownRemark(
+    filter: { fileAbsolutePath: { glob: "**/data/posts/*.md" } }
+    sort: { fields: [frontmatter___year, frontmatter___title], order: [DESC, ASC] }
+    limit: 1
+  ) {
+    edges {
+      node {
+        fields {
+          path
+        }
+        frontmatter {
+          title
+          date
+          tags
         }
       }
     }
