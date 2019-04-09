@@ -9,7 +9,6 @@ import {
   NavItem,
   Collapse,
 } from 'reactstrap'
-import styled from 'styled-components'
 
 class Header extends Component {
   constructor(props) {
