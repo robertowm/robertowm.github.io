@@ -139,6 +139,12 @@ module.exports = {
         respectDNT: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-offline',

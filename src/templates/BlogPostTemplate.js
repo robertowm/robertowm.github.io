@@ -8,7 +8,7 @@ import { breadcrumbGenerator } from '../components/breadcrumb'
 
 export const OneLineBlogPostTemplate = ({ node: { fields, frontmatter } }) => (
   <div className="px-3 pt-2 mt-2" css={blockCss}>
-    <h5>
+    <h6>
       <span className="mr-2">
         Latest post ({new Date(frontmatter.date).toDateString()}):
       </span>
@@ -18,7 +18,7 @@ export const OneLineBlogPostTemplate = ({ node: { fields, frontmatter } }) => (
           <Badge className="mx-1">{tag}</Badge>
         ))}
       </Link>
-    </h5>
+    </h6>
   </div>
 )
 

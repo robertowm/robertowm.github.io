@@ -3,12 +3,12 @@ import { Link } from 'gatsby'
 import {
   Container,
   Navbar,
-  NavbarBrand,
   NavbarToggler,
   Nav,
   NavItem,
   Collapse,
 } from 'reactstrap'
+import { css } from '@emotion/core'
 
 class Header extends Component {
   constructor(props) {
@@ -46,9 +46,9 @@ class Header extends Component {
         style={{ backgroundColor: 'rebeccapurple' }}
       >
         <Container>
-          <NavbarBrand>
             <Link
               to="/"
+              className={"navbar-brand"}
               style={{
                 color: 'white',
                 whiteSpace: 'nowrap',
@@ -58,10 +58,9 @@ class Header extends Component {
             >
               {siteTitle}
             </Link>
-          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto" navbar css={css`li { margin-bottom: 0; }`}>
               <NavItem>
                 <NavLink to="/" name="About me" />
               </NavItem>
