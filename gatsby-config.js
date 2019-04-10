@@ -145,6 +145,12 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `rebeccapurple`,
+      },
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-offline',
