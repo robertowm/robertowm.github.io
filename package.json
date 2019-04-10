@@ -48,6 +48,8 @@
   "scripts": {
     "build": "gatsby build",
     "servebuild": "gatsby build && gatsby serve",
+    "clearcache": "rm -rf .cache public/",
+    "reinstall": "npm run clearcache && rm -rf node_modules/ && yarn install",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
