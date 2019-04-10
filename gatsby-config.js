@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: 'https://robertowm.github.io',
     title: 'Roberto Weidmann Menezes',
     description: 'Roberto Weidmann Menezes - Software Engineer - Portfolio',
-    keywords: 'Roberto Weidmann Menezes, Software Engineer, Portfolio',
+    image: '/images/icon.png',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -11,7 +11,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images/`,
+        path: `${__dirname}/static/images/`,
       },
     },
     {
@@ -69,7 +69,7 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/icon.png',
+        icon: 'static/images/icon.png',
       },
     },
     {
