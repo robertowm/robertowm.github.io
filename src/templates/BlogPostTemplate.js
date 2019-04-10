@@ -3,11 +3,11 @@ import { graphql, Link } from 'gatsby'
 import { Container, Row, Col, Badge } from 'reactstrap'
 
 import Layout from '../components/layout'
-import { style as containerStyle, HtmlBlock } from '../components/block'
+import { blockCss, HtmlBlock } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
 export const OneLineBlogPostTemplate = ({ node: { fields, frontmatter } }) => (
-  <div className="px-3 pt-2 mt-2" style={containerStyle}>
+  <div className="px-3 pt-2 mt-2" css={blockCss}>
     <h5>
       <span className="mr-2">
         Latest post ({new Date(frontmatter.date).toDateString()}):
@@ -35,7 +35,7 @@ export default ({ data: { markdownRemark: content } }) => {
       <Container class="fluid">
         {breadcrumb}
 
-        <div className="p-3 mt-2" style={containerStyle}>
+        <div className="p-3 mt-2" css={blockCss}>
           <Row style={{ fontSize: '14px' }}>
             <Col>
               <h1>{title}</h1>

@@ -3,9 +3,8 @@ import { Row, Col, Collapse } from 'reactstrap'
 import Remark from 'remark'
 import html from 'remark-html'
 import {
-  style as containerStyle,
+  blockCss,
   HtmlBlock,
-  TextBlock,
 } from '../components/block'
 import { DateRange } from '../components/date'
 
@@ -88,7 +87,7 @@ export default ({ entries }) => {
   )
 
   return (
-    <div className="p-3 mt-2" style={containerStyle}>
+    <div className="p-3 mt-2" css={blockCss}>
       <h4>Work experience</h4>
       {parsedEntries}
     </div>

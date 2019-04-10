@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { Container } from 'reactstrap'
 
 import Layout from '../components/layout'
-import { style as containerStyle } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
 import ProjectsTemplate from '../templates/ProjectsTemplate'

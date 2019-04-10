@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 import { IconList, ClicableIcon, Icon } from '../components/icon'
-import { style as containerStyle } from '../components/block'
+import { blockCss } from '../components/block'
 import Img from 'gatsby-image'
 
 const mapNameToIcon = name => {
@@ -15,7 +15,7 @@ const mapNameToIcon = name => {
 
 export default ({ fullName, body, address, email, cvUrl, photo, links }) => {
   return (
-    <div className="p-3" style={containerStyle}>
+    <div className="p-3" css={blockCss}>
       <Row className="px-md-1">
         <Col lg="3" md="4" className="text-center mb-3">
           <Img

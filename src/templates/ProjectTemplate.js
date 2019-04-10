@@ -1,10 +1,10 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import { Container, Row, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap'
+import { graphql } from 'gatsby'
+import { Container, Row, Col } from 'reactstrap'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
-import { style as containerStyle, HtmlBlock } from '../components/block'
+import { blockCss, HtmlBlock } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
 export default ({ data: { markdownRemark: content } }) => {
@@ -20,7 +20,7 @@ export default ({ data: { markdownRemark: content } }) => {
       <Container class="fluid">
         {breadcrumb}
 
-        <div className="p-3 mt-2" style={containerStyle}>
+        <div className="p-3 mt-2" css={blockCss}>
           <Row style={{ fontSize: '14px' }}>
             <Col md="4">
               <Img

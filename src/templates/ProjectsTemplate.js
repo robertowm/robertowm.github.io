@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import { Row, Col, Collapse } from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import {
-  style as containerStyle,
-  HtmlBlock,
-  TextBlock,
-} from '../components/block'
+import { blockCss } from '../components/block'
 
 class ProjectSummary extends Component {
   constructor(props) {
@@ -68,7 +64,7 @@ export default ({ entries }) => {
   ))
 
   return (
-    <div className="p-3 mt-2" style={containerStyle}>
+    <div className="p-3 mt-2" css={blockCss}>
       <h4>Projects</h4>
       {parsedEntries}
     </div>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { style as containerStyle } from './block'
+import { blockCss } from './block'
 
 export const Breadcrumb = ({ children }) => (
-  <div className="p-2" style={containerStyle}>
+  <div className="p-2" css={blockCss}>
     {children}
   </div>
 )

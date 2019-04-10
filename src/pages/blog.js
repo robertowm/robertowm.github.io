@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import { Container, Row, Col } from 'reactstrap'
 
 import Layout from '../components/layout'
-import { style as containerStyle } from '../components/block'
+import { blockCss } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
 const BlogPostSummary = ({ title, excerpt, path, date }) => {
@@ -40,7 +40,7 @@ const BlogPage = ({ data }) => {
     <Layout>
       <Container class="fluid">
         {breadcrumb}
-        <div className="p-3 mt-2" style={containerStyle}>
+        <div className="p-3 mt-2" css={blockCss}>
           <h4>Blog</h4>
           <div class="my-4" style={{ fontSize: '14px' }}>
             <Row>

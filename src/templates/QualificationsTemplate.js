@@ -1,7 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
-import { IconList, ClicableIcon, Icon } from '../components/icon'
-import { style as containerStyle } from '../components/block'
+import { blockCss } from '../components/block'
 import { DateRange } from '../components/date'
 
 export default ({ education, certifications }) => {
@@ -14,7 +12,7 @@ export default ({ education, certifications }) => {
 
   return (
     <>
-      <div className="p-3 my-2" style={containerStyle}>
+      <div className="p-3 my-2" css={blockCss}>
         <h4>Education</h4>
         {education.map(({ title, institution, start_year, end_year }) => (
           <div style={{ fontSize: '14px' }}>
@@ -24,7 +22,7 @@ export default ({ education, certifications }) => {
           </div>
         ))}
       </div>
-      <div className="p-3 my-2" style={containerStyle}>
+      <div className="p-3 my-2" css={blockCss}>
         <h4>Most relevant certifications</h4>
         {certifications.map(({ name, institutions, url, date }) => (
           <div style={{ fontSize: '14px' }}>
