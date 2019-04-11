@@ -33,19 +33,18 @@ const Layout = ({ children }) => (
         siteMetadata: { defaultTitle, titleTemplate, defaultDescription },
       },
     }) => (
-        <>
-          <Helmet
-            title={defaultTitle} titleTemplate={titleTemplate}
-            meta={[
-              { name: 'description', content: defaultDescription },
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
-          <Header siteTitle={defaultTitle} />
-          <Main>{children}</Main>
-        </>
-      )}
+      <>
+        <Helmet
+          title={defaultTitle}
+          titleTemplate={titleTemplate}
+          meta={[{ name: 'description', content: defaultDescription }]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <Header siteTitle={defaultTitle} />
+        <Main>{children}</Main>
+      </>
+    )}
   />
 )
 

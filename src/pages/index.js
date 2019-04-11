@@ -29,12 +29,11 @@ const IndexPage = ({ data }) => {
           links={aboutMeData.links}
         />
 
-        {
-          data.latestBlogPost.totalCount > 0 &&
+        {data.latestBlogPost.totalCount > 0 && (
           <OneLineBlogPostTemplate
             node={_.first(data.latestBlogPost.edges).node}
           />
-        }
+        )}
 
         <Row className="no-gutters">
           <Col md="7" sm="12" className="pr-md-2">

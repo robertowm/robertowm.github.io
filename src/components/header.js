@@ -46,21 +46,29 @@ class Header extends Component {
         style={{ backgroundColor: 'rebeccapurple' }}
       >
         <Container>
-            <Link
-              to="/"
-              className={"navbar-brand"}
-              style={{
-                color: 'white',
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-              }}
-            >
-              {siteTitle}
-            </Link>
+          <Link
+            to="/"
+            className={'navbar-brand'}
+            style={{
+              color: 'white',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
+          >
+            {siteTitle}
+          </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar css={css`li { margin-bottom: 0; }`}>
+            <Nav
+              className="ml-auto"
+              navbar
+              css={css`
+                li {
+                  margin-bottom: 0;
+                }
+              `}
+            >
               <NavItem>
                 <NavLink to="/" name="About me" />
               </NavItem>
