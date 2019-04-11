@@ -29,9 +29,12 @@ const IndexPage = ({ data }) => {
           links={aboutMeData.links}
         />
 
-        <OneLineBlogPostTemplate
-          node={_.first(data.latestBlogPost.edges).node}
-        />
+        {
+          data.latestBlogPost.totalCount > 0 &&
+          <OneLineBlogPostTemplate
+            node={_.first(data.latestBlogPost.edges).node}
+          />
+        }
 
         <Row className="no-gutters">
           <Col md="7" sm="12" className="pr-md-2">
@@ -144,6 +147,7 @@ export const query = graphql`
       }
       limit: 1
     ) {
+      totalCount
       edges {
         node {
           fields {
