@@ -93,4 +93,4 @@ workflows:
               only:
                 - dev
           requires:
-            - build
+            - test_and_build
