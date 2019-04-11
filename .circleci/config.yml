@@ -56,7 +56,7 @@ jobs:
           at: ./
       - add_ssh_keys:
           fingerprints:
-            - "97:8e:80:89:57:f8:e5:96:c9:7d:50:79:a4:d1:eb:fd"
+            - "14:ab:61:a5:97:70:38:f1:94:6f:09:65:f3:f6:26:32"
       - run:
           name: Auth with github
           # github changes their keys sometimes and we run into this issue:
