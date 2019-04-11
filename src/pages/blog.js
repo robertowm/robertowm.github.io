@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { Container, Row, Col } from 'reactstrap'
 
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { blockCss } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
@@ -38,6 +39,11 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title={'Blog'}
+        description={`Main blog page, listing all published posts.`}
+        pathname={'/blog'}
+      />
       <Container class="fluid">
         {breadcrumb}
         <div className="p-3 mt-2" css={blockCss}>

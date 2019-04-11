@@ -3,7 +3,9 @@ import { graphql } from 'gatsby'
 import { Container, Row, Col } from 'reactstrap'
 import _ from 'lodash'
 
+import SEO from '../components/seo'
 import Layout from '../components/layout'
+
 import AboutMeTemplate from '../templates/AboutMeTemplate'
 import QualificationsTemplate from '../templates/QualificationsTemplate'
 import WorkExperiencesTemplate from '../templates/WorkExperiencesTemplate'
@@ -14,6 +16,7 @@ const IndexPage = ({ data }) => {
   const aboutMeData = data.aboutMe.frontmatter
   return (
     <Layout>
+      <SEO />
       <Container class="fluid">
         <AboutMeTemplate
           fullName={aboutMeData.full_name}

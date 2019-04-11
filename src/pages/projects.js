@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Container } from 'reactstrap'
 
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
@@ -14,6 +15,11 @@ const ProjectsPage = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title={'Projects'}
+        description={`Main projects page, listing a few of the projects Roberto worked.`}
+        pathname={'/projects'}
+      />
       <Container class="fluid">
         {breadcrumb}
         <ProjectsTemplate entries={data.allMarkdownRemark.edges} />

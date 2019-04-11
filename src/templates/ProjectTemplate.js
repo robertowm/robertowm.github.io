@@ -3,13 +3,14 @@ import { graphql } from 'gatsby'
 import { Container, Row, Col } from 'reactstrap'
 import Img from 'gatsby-image'
 
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { blockCss, HtmlBlock } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
 export default ({ data: { markdownRemark: content } }) => {
   const { name, short_name, company, url, thumbnail } = content.frontmatter
-  const body = content.html
+  const { html, excerpt } = content
   const breadcrumb = breadcrumbGenerator(short_name, [
     { to: '/', label: 'Home' },
     { to: '/projects/', label: 'Projects' },
@@ -17,6 +18,13 @@ export default ({ data: { markdownRemark: content } }) => {
 
   return (
     <Layout>
+      <SEO
+        title={`Project ${short_name}`}
+        description={excerpt}
+        pathname={content.fields.path}
+        article
+      />
+
       <Container class="fluid">
         {breadcrumb}
 
@@ -34,7 +42,7 @@ export default ({ data: { markdownRemark: content } }) => {
               <a href={url}>
                 <h3>{company}</h3>
               </a>
-              <HtmlBlock body={body} />
+              <HtmlBlock body={html} />
             </Col>
           </Row>
         </div>
@@ -47,6 +55,10 @@ export const query = graphql`
   query ProjectPageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      excerpt
+      fields {
+        path
+      }
       frontmatter {
         name
         short_name

@@ -1,9 +1,12 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://robertowm.github.io',
-    title: 'Roberto Weidmann Menezes',
-    description: 'Roberto Weidmann Menezes - Software Engineer - Portfolio',
-    image: '/images/icon.png',
+    defaultTitle: 'Roberto Weidmann Menezes',
+    titleTemplate: "roberto.github.io - %s",
+    defaultDescription: 'Roberto Weidmann Menezes blog and personal website - Software Engineer at SLI Systems',
+    defaultImage: '/images/icon.png',
+    twitterUsername: "@robertowm",
+    keywords: ""
   },
   plugins: [
     'gatsby-plugin-react-helmet',

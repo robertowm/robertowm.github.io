@@ -13,9 +13,9 @@ const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
-        title
-        description
-        keywords
+        defaultTitle
+        titleTemplate
+        defaultDescription
       }
     }
   }
@@ -30,23 +30,22 @@ const Layout = ({ children }) => (
     query={query}
     render={({
       site: {
-        siteMetadata: { title, description, keywords },
+        siteMetadata: { defaultTitle, titleTemplate, defaultDescription },
       },
     }) => (
-      <>
-        <Helmet
-          title={title}
-          meta={[
-            { name: 'description', content: description },
-            { name: 'keywords', content: keywords },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={title} />
-        <Main>{children}</Main>
-      </>
-    )}
+        <>
+          <Helmet
+            title={defaultTitle} titleTemplate={titleTemplate}
+            meta={[
+              { name: 'description', content: defaultDescription },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <Header siteTitle={defaultTitle} />
+          <Main>{children}</Main>
+        </>
+      )}
   />
 )
 

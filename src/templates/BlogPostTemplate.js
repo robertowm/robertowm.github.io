@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { Container, Row, Col, Badge } from 'reactstrap'
 
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { blockCss, HtmlBlock } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
@@ -24,7 +25,7 @@ export const OneLineBlogPostTemplate = ({ node: { fields, frontmatter } }) => (
 
 export default ({ data: { markdownRemark: content } }) => {
   const { title, date, tags } = content.frontmatter
-  const body = content.html
+  const { html, excerpt } = content
   const breadcrumb = breadcrumbGenerator(title, [
     { to: '/', label: 'Home' },
     { to: '/blog/', label: 'Blog' },
@@ -32,6 +33,12 @@ export default ({ data: { markdownRemark: content } }) => {
 
   return (
     <Layout>
+      <SEO
+        title={`Post ${title}`}
+        description={excerpt}
+        pathname={content.fields.path}
+        article
+      />
       <Container class="fluid">
         {breadcrumb}
 
@@ -50,7 +57,7 @@ export default ({ data: { markdownRemark: content } }) => {
           </Row>
           <Row>
             <Col>
-              <HtmlBlock body={body} />
+              <HtmlBlock body={html} />
             </Col>
           </Row>
         </div>
@@ -63,6 +70,10 @@ export const query = graphql`
   query BlogPostPageTemplate($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      excerpt
+      fields {
+        path
+      }
       frontmatter {
         title
         date
