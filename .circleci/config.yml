@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:10
     working_directory: ~/repo
@@ -22,7 +22,33 @@ jobs:
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       - run:
-          name: Compile Gatsby site
+          name: Test site
+          command: yarn test
+
+  test_build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+
+    steps:
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Test site
+          command: yarn test
+
+      - run:
+          name: Build site
           command: yarn build
       
       - persist_to_workspace:
@@ -44,6 +70,16 @@ jobs:
           command: npm run deploy
 workflows:
   version: 2
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+                - /\/cms\/.*/
+                
   build_and_deploy:
     jobs:
       - build:
