@@ -4,7 +4,7 @@ full_name: Roberto Weidmann Menezes
 address: 'Christchurch, NZ'
 email: robertowm@gmail.com
 profile_url: 'https://robertowm.github.io'
-cv: '/uploads/CV - Roberto Weidmann Menezes.pdf'
+cv: /uploads/CV - Roberto Weidmann Menezes.pdf
 photo: /uploads/profile.png
 links:
   - name: LinkedIn
@@ -18,6 +18,4 @@ Computer scientist with experience in design and development of data-oriented
 solutions. Interested in big data, search engines, data pipelines, data
 analysis, software engineering and distributed systems.
 
-Currently, I am Software Engineer at SLI Systems, an amazing company related
-to enterprise eCommerce solutions. Also, I am improving my knowledge in big
-data and data mining through online courses and self-study.
+Currently, I am Senior Software Engineer at Seequent, a global leader in the development of data visualisation software and collaborative technologies.
