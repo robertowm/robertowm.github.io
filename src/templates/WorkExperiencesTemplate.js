@@ -47,21 +47,23 @@ class WorkExperience extends Component {
             />
           </Col>
         </Row>
-        <div className="d-none d-md-block" style={{ fontSize: '13px' }}>
-          <p>
-            {mainSummary}
-            &nbsp;
-            <a
-              onClick={this.toggle}
-              style={{ cursor: 'pointer', fontFamily: 'monospace' }}
-            >
-              [{this.state.collapse ? '-' : '+'}]
-            </a>
-          </p>
-          <Collapse isOpen={this.state.collapse}>
-            <HtmlBlock body={processor(expandableSummary.join('\n'))} />
-          </Collapse>
-        </div>
+        {mainSummary.trim().size() > 0 &&
+          <div className="d-none d-md-block" style={{ fontSize: '13px' }}>
+            <p>
+              {mainSummary}
+              &nbsp;
+              <a
+                onClick={this.toggle}
+                style={{ cursor: 'pointer', fontFamily: 'monospace' }}
+              >
+                [{this.state.collapse ? '-' : '+'}]
+              </a>
+            </p>
+            <Collapse isOpen={this.state.collapse}>
+              <HtmlBlock body={processor(expandableSummary.join('\n'))} />
+            </Collapse>
+          </div>
+        }
       </>
     )
   }
