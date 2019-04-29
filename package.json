@@ -55,7 +55,7 @@
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"No test yet\"",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b master -m \"Update master with new version [skip ci]\""
   },
   "devDependencies": {
     "prettier": "^1.15.2"
