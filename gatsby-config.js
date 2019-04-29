@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://robertowm.github.io',
     defaultTitle: 'Roberto Weidmann Menezes',
-    titleTemplate: "roberto.github.io - %s",
+    titleTemplate: "robertowm.github.io - %s",
     defaultDescription: 'Roberto Weidmann Menezes blog and personal website - Software Engineer at SLI Systems',
     defaultImage: '/images/icon.png',
     twitterUsername: "@robertowm",
