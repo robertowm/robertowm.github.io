@@ -1,8 +1,14 @@
 ---
 layout: work-experiences
 work-experience:
+  - company: Seequent
+    end_year: Invalid date
+    position: Senior Software Engineer
+    start_year: '2019'
+    summary: '    '
+    url: 'https://www.seequent.com/'
   - company: SLI Systems
-    end_year: ''
+    end_year: '2019'
     position: Software Engineer
     start_year: '2016'
     summary: >-
@@ -125,3 +131,4 @@ work-experience:
       scholarship available at UFF.
     url: 'http://www.sti.uff.br/'
 ---
+
