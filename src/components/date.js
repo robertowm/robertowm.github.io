@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const DateRange = ({ begin, end, className }) => {
-  const content = !end
+  const content = !end || isNaN(parseInt(end))
     ? `Since ${begin}`
     : begin === end
     ? begin
