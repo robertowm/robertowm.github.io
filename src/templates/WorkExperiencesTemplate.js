@@ -24,6 +24,7 @@ class WorkExperience extends Component {
   render() {
     const { position, company, url, summary, startYear, endYear } = this.props
     const processor = this.props.processor || (text => text)
+    const hasSummary = summary && summary.trim().length > 0
     const [mainSummary, ...expandableSummary] = summary.split('\n')
 
     return (
@@ -47,7 +48,7 @@ class WorkExperience extends Component {
             />
           </Col>
         </Row>
-        {mainSummary.trim().size() > 0 &&
+        {hasSummary &&
           <div className="d-none d-md-block" style={{ fontSize: '13px' }}>
             <p>
               {mainSummary}
@@ -64,6 +65,7 @@ class WorkExperience extends Component {
             </Collapse>
           </div>
         }
+        {!hasSummary && <p></p>}
       </>
     )
   }
