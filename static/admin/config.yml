@@ -2,6 +2,7 @@ backend:
   name: github
   repo: robertowm/robertowm.github.io
   branch: dev
+  site_domain: robertowm.netlify.com
 site_id: robertowm
 publish_mode: editorial_workflow
 media_folder: "static/uploads"
