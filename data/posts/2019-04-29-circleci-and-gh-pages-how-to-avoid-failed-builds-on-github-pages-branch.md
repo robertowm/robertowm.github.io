@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CircleCI and gh-pages - how to avoid failed builds on GitHub Pages branch
+title: 'CircleCI: Avoiding failed builds on GitHub Pages branch'
 date: 2019-04-29T08:49:36.610Z
 tags:
   - CircleCI
