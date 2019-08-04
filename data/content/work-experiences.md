@@ -5,7 +5,7 @@ work-experience:
     end_year: Invalid date
     position: Senior Software Engineer
     start_year: '2019'
-    summary: '    '
+    summary: "At this moment I’m working with web solutions at Seequent, on greenfield projects related to our new strategies.\_Our team is focused on frontend development, ensuring high-quality systems to our users and integrating them with our modeling solutions and internal APIs, developed in Python.\n\nThe most relevant project I’m working on is our new user portal.  It allows users to manage projects, events, and integrations related to Leapfrog.\_It is developed using React, Redux, Material UI, and Typescript.\n\nOther projects include shared UI components and API integrations, using a similar set of technologies.\_Also, they are maintained across distributed teams located in New Zealand and Canada."
     url: 'https://www.seequent.com/'
   - company: SLI Systems
     end_year: '2019'
