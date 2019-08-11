@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
           address={aboutMeData.address}
           email={aboutMeData.email}
           profileUrl={aboutMeData.profile_url}
-          cvUrl={aboutMeData.cv_url}
+          cvUrl={aboutMeData.cv.publicURL}
           photo={aboutMeData.photo.childImageSharp}
           links={aboutMeData.links}
         />
@@ -65,7 +65,9 @@ export const query = graphql`
         address
         email
         profile_url
-        cv
+        cv {
+          publicURL
+        }
         photo {
           childImageSharp {
             fluid(maxWidth: 300, quality: 100) {
