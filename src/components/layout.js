@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from '@emotion/styled'
+import { Container } from 'reactstrap'
 
 import Header from './header'
 import { CopyrightProtectedFooter } from './footer';
@@ -22,10 +22,6 @@ const query = graphql`
   }
 `
 
-const Main = styled.div`
-  padding-top: 5px;
-`
-
 const Layout = ({ children, footer }) => (
   <StaticQuery
     query={query}
@@ -43,7 +39,7 @@ const Layout = ({ children, footer }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={defaultTitle} />
-        <Main>{children}</Main>
+        <Container class="fluid" style={{ paddingTop: '5px' }}>{children}</Container>
         {footer || <CopyrightProtectedFooter />}
       </>
     )}
