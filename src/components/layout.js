@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Header from './header'
+import { CopyrightProtectedFooter } from './footer';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './layout.css'
@@ -25,7 +26,7 @@ const Main = styled.div`
   padding-top: 5px;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, footer }) => (
   <StaticQuery
     query={query}
     render={({
@@ -43,6 +44,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <Header siteTitle={defaultTitle} />
         <Main>{children}</Main>
+        {footer || <CopyrightProtectedFooter />}
       </>
     )}
   />

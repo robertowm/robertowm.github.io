@@ -4,6 +4,7 @@ import { Container, Row, Col, Badge } from 'reactstrap'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
+import { CreativeCommonsFooter } from '../components/footer'
 import { blockCss, HtmlBlock } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
@@ -32,7 +33,7 @@ export default ({ data: { markdownRemark: content } }) => {
   ])
 
   return (
-    <Layout>
+    <Layout footer={<CreativeCommonsFooter />}>
       <SEO
         title={`Post ${title}`}
         description={excerpt}

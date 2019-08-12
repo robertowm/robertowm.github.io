@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
+import { CreativeCommonsFooter } from '../components/footer'
 import { blockCss } from '../components/block'
 import { breadcrumbGenerator } from '../components/breadcrumb'
 
@@ -38,7 +39,7 @@ const BlogPage = ({ data }) => {
   ))
 
   return (
-    <Layout>
+    <Layout footer={<CreativeCommonsFooter />}>
       <SEO
         title={'Blog'}
         description={`Main blog page, listing all published posts.`}
