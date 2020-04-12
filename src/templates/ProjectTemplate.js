@@ -25,7 +25,7 @@ export default ({ data: { markdownRemark: content } }) => {
         article
       />
 
-      <Container class="fluid">
+      <Container>
         {breadcrumb}
 
         <div className="p-3 mt-2" css={blockCss}>

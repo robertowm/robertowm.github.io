@@ -10,7 +10,7 @@ const NotFoundPage = () => (
       description={`This page doesn't exist.`}
       pathname={'/404'}
     />
-    <Container class="fluid">
+    <Container>
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Container>

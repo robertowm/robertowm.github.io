@@ -45,7 +45,7 @@ const BlogPage = ({ data }) => {
         description={`Main blog page, listing all published posts.`}
         pathname={'/blog'}
       />
-      <Container class="fluid">
+      <Container>
         {breadcrumb}
         <div className="p-3 mt-2" css={blockCss}>
           <h4>Blog</h4>

@@ -20,7 +20,7 @@ const ProjectsPage = ({ data }) => {
         description={`Main projects page, listing a few of the projects Roberto worked.`}
         pathname={'/projects'}
       />
-      <Container class="fluid">
+      <Container>
         {breadcrumb}
         <ProjectsTemplate entries={data.allMarkdownRemark.edges} />
       </Container>

@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO />
-      <Container class="fluid">
+      <Container>
         <AboutMeTemplate
           fullName={aboutMeData.full_name}
           body={data.aboutMe.html}

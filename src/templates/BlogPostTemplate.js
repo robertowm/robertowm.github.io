@@ -40,7 +40,7 @@ export default ({ data: { markdownRemark: content } }) => {
         pathname={content.fields.path}
         article
       />
-      <Container class="fluid">
+      <Container>
         {breadcrumb}
 
         <div className="p-3 mt-2" css={blockCss}>
