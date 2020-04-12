@@ -18,4 +18,4 @@ Computer scientist with experience in design and development of data-oriented
 solutions. Interested in big data, search engines, data pipelines, data
 analysis, software engineering and distributed systems.
 
-Currently, I am Senior Software Engineer at Seequent, a global leader in the development of data visualisation software and collaborative technologies.
+Currently, I am a Senior Software Engineer at Magic Memories, a global leader in attraction photography business. My position is remote, working with team members across New Zealand, Australia, USA and Canada.
