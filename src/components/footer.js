@@ -13,7 +13,7 @@ const FooterBase = styled.div`
 export function CopyrightProtectedFooter() {
   return (
     <FooterBase>
-      <p>Copyright &copy; 2019 All Rights Reserved to <a href="#">Roberto Weidmann Menezes</a>.</p>
+      <p>Copyright &copy; 2020 All Rights Reserved to <a href="#">Roberto Weidmann Menezes</a>.</p>
     </FooterBase>
   )
 }
