@@ -1,11 +1,17 @@
 ---
 layout: work-experiences
 work-experience:
-  - company: Seequent
+  - company: Magic Memories
     end_year: Invalid date
     position: Senior Software Engineer
     start_year: '2019'
-    summary: "At this moment I’m working with web solutions at Seequent, on greenfield projects related to our new strategies.\_Our team is focused on frontend development, ensuring high-quality systems to our users and integrating them with our modeling solutions and internal APIs, developed in Python.\n\nThe most relevant project I’m working on is our new user portal.  It allows users to manage projects, events, and integrations related to Leapfrog.\_It is developed using React, Redux, Material UI, and Typescript.\n\nOther projects include shared UI components and API integrations, using a similar set of technologies.\_Also, they are maintained across distributed teams located in New Zealand and Canada."
+    summary: "At this moment I’m working with web solutions related to our new products. As a remote team, we're focused on agile principles to deliver new features as fast as possible, heavily focused on MVPs, and continuous improvements on our features.\r\n\nOur team's main focus is on developing new features to our main web platform, focused on selling and distribution of media to our customers. It is developed using a wide set of technologies related to modern web and microservices architecture. The most relevant technologies are Spring Boot, Spring Cloud, Angular, Typescript, Angular Material, MySQL, Redis, Kubernetes, and AWS.\r\n\nOne of the main tasks I worked on recently is prototyping image processing algorithms for automatically applying templates on guest photos, focused on improving our product quality and reducing operational costs. Also, I participated in several major changes across the whole solution, like refactoring the analytics layer on the Front End project, to improve data quality and maintainability."
+    url: 'https://www.magicmemories.com/'
+  - company: Seequent
+    end_year: '2019'
+    position: Senior Software Engineer
+    start_year: '2019'
+    summary: "I was working with web solutions, on greenfield projects related to its new strategies. Our team wass focused on frontend development, ensuring high-quality systems to our users and integrating them with our modeling solutions and internal APIs, developed in Python.\r\n\nThe most relevant project I participated in was the new user portal. It allows users to manage projects, events, and integrations related to Leapfrog. It is developed using React, Redux, Material UI, and Typescript. Other projects included shared UI components and API integrations, using a similar set of technologies. Also, they were maintained across distributed teams located in New Zealand and Canada."
     url: 'https://www.seequent.com/'
   - company: SLI Systems
     end_year: '2019'
