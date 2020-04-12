@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col } from 'reactstrap'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+
 import { blockCss } from '../components/block'
 
 class ProjectSummary extends Component {

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
+import Img from 'gatsby-image'
+
 import { IconList, ClicableIcon, Icon } from '../components/icon'
 import { blockCss } from '../components/block'
-import Img from 'gatsby-image'
 
 const mapNameToIcon = name => {
   if (name === 'GitHub') return ['fab', 'github']
