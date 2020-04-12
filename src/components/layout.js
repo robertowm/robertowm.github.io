@@ -39,7 +39,7 @@ const Layout = ({ children, footer }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={defaultTitle} />
-        <Container style={{ paddingTop: '5px' }}>{children}</Container>
+        <div style={{ paddingTop: '5px' }}>{children}</div>
         {footer || <CopyrightProtectedFooter />}
       </>
     )}
