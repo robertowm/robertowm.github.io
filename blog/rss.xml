@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Sun, 12 Apr 2020 05:40:49 GMT</lastBuildDate><item><title><![CDATA[CircleCI: Avoiding failed builds on GitHub Pages branch]]></title><description><![CDATA[My latest project was to reimplement my personal webpage with GatsbyJS.  In the end, it was awesome (and deserves a proper post).  Just a…]]></description><link>https://robertowm.github.io/posts/2019-04-29-circleci-and-gh-pages-how-to-avoid-failed-builds-on-github-pages-branch/</link><guid isPermaLink="false">https://robertowm.github.io/posts/2019-04-29-circleci-and-gh-pages-how-to-avoid-failed-builds-on-github-pages-branch/</guid><pubDate>Mon, 29 Apr 2019 08:49:36 GMT</pubDate><content:encoded>&lt;p&gt;My latest project was to reimplement my personal webpage with GatsbyJS.  In the end, it was awesome (and deserves a proper post).  Just a quick summary of this project, it relies on NetlifyCMS to manage my page and posts.  All data is stored on GitHub as static files.  In the end, I decided to use CircleCI to implement Continuum Delivery - every time a change happens on the dev branch, it starts a job to build my webpage and push the compiled project to master branch.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RWM Blog RSS Feed]]></title><description><![CDATA[RWM Blog RSS Feed]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Apr 2020 06:09:35 GMT</lastBuildDate><item><title><![CDATA[CircleCI: Avoiding failed builds on GitHub Pages branch]]></title><description><![CDATA[My latest project was to reimplement my personal webpage with GatsbyJS.  In the end, it was awesome (and deserves a proper post).  Just a…]]></description><link>https://robertowm.github.io/posts/2019-04-29-circleci-and-gh-pages-how-to-avoid-failed-builds-on-github-pages-branch/</link><guid isPermaLink="false">https://robertowm.github.io/posts/2019-04-29-circleci-and-gh-pages-how-to-avoid-failed-builds-on-github-pages-branch/</guid><pubDate>Mon, 29 Apr 2019 08:49:36 GMT</pubDate><content:encoded>&lt;p&gt;My latest project was to reimplement my personal webpage with GatsbyJS.  In the end, it was awesome (and deserves a proper post).  Just a quick summary of this project, it relies on NetlifyCMS to manage my page and posts.  All data is stored on GitHub as static files.  In the end, I decided to use CircleCI to implement Continuum Delivery - every time a change happens on the dev branch, it starts a job to build my webpage and push the compiled project to master branch.&lt;/p&gt;
 &lt;p&gt;After spending some time configuring CircleCI configuration file, everything was working nicely... expect when things go to the master branch - I started receiving alerts by email related to building failures...&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -6,25 +6,26 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/f4c982b5500ff296605910cfbfb97f9c/08b37/circleci-ghpages_email.png&quot;
+    href=&quot;/static/f4c982b5500ff296605910cfbfb97f9c/29229/circleci-ghpages_email.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 60.23993144815767%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABjklEQVQoz5VT7UrEMBC81/afICiIiqL4LoI/Rc87fAf1sDnt1/XaJE2u7Tiba7F+gQaG3W0yk+3uZuK9h1IKy+UScRwHJGmKJEmIFCn9oiiQMs6yjHG2PcO99XoNrTXatoWssiwxqesaeb5CVVUQXy746/LOwxobILymaTARdWMMrLXBCrSuoHmb5iUBzKRK4o+42u4NvDE3CEraYxjnYLsOpmlhmYkuVkivr2A2G1iet20XoCn0iTcIbrPqP9YO5eIZ2d0N8vkUq4c58ocZ8tnd1jLO7m8ZT1GxvmYk+l2QvyEZ5NNbvOzuQB3tQ50dYXl+jPjyFG+0rxcnUAe7UId7KJ8eYVi7XwVDHcTy1hU7q2uPt6xCVpBgajbNo+s72hG2z27M/y4o4MEkTVBSJC/ZwaYDSxYwXn8SFDt0zUlzxGdd5VzLRsloDPiXoPcOftOwk47kFg3FNxylIEz8W1Cyq5mZ5bA7DrCjrfusBTLIX3k/j03vy9OT5yhQKsJisYCiH/GZRlEU9se8gfsOj2OXEwqMm9cAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABjklEQVQoz5VT7UrEMBC81/afICiIiqL4LoI/Rc87fAf1sDnt1/XaJE2u7Tiba7F+gQaG3W0yk+3uZuK9h1IKy+UScRwHJGmKJEmIFCn9oiiQMs6yjHG2PcO99XoNrTXatoWssiwxqesaeb5CVVUQXy746/LOwxobILymaTARdWMMrLXBCrSuoHmb5iUBzKRK4o+42u4NvDE3CEraYxjnYLsOpmlhmYkuVkivr2A2G1iet20XoCn0iTcIbrPqP9YO5eIZ2d0N8vkUq4c58ocZ8tnd1jLO7m8ZT1GxvmYk+l2QvyEZ5NNbvOzuQB3tQ50dYXl+jPjyFG+0rxcnUAe7UId7KJ8eYVi7XwVDHcTy1hU7q2uPt6xCVpBgajbNo+s72hG2z27M/y4o4MEkTVBSJC/ZwaYDSxYwXn8SFDt0zUlzxGdd5VzLRsloDPiXoPcOftOwk47kFg3FNxylIEz8W1Cyq5mZ5bA7DrCjrfusBTLIX3k/j03vy9OT5yhQKsJisYCiH/GZRlEU9se8gfsOj2OXEwqMm9cAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Email about failed build on master&quot;
         title=&quot;Email about failed build on master&quot;
-        src=&quot;/static/f4c982b5500ff296605910cfbfb97f9c/8ff1e/circleci-ghpages_email.png&quot;
-        srcset=&quot;/static/f4c982b5500ff296605910cfbfb97f9c/9ec3c/circleci-ghpages_email.png 200w,
-/static/f4c982b5500ff296605910cfbfb97f9c/c7805/circleci-ghpages_email.png 400w,
-/static/f4c982b5500ff296605910cfbfb97f9c/8ff1e/circleci-ghpages_email.png 800w,
-/static/f4c982b5500ff296605910cfbfb97f9c/08b37/circleci-ghpages_email.png 1167w&quot;
+        src=&quot;/static/f4c982b5500ff296605910cfbfb97f9c/5a190/circleci-ghpages_email.png&quot;
+        srcset=&quot;/static/f4c982b5500ff296605910cfbfb97f9c/772e8/circleci-ghpages_email.png 200w,
+/static/f4c982b5500ff296605910cfbfb97f9c/e17e5/circleci-ghpages_email.png 400w,
+/static/f4c982b5500ff296605910cfbfb97f9c/5a190/circleci-ghpages_email.png 800w,
+/static/f4c982b5500ff296605910cfbfb97f9c/29229/circleci-ghpages_email.png 1167w&quot;
         sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -36,26 +37,27 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/0309e/circleci-ghpages_build-failed.png&quot;
+    href=&quot;/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/21b4d/circleci-ghpages_build-failed.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAACBUlEQVQoz62STWtaURCGz1aoGhBduPM/uDcqSvpjxGZhAkFCdwGDnz+gXRV3bYkhSVvqzoW0y5Z2kyJomg+Nx+u5n96bvJ25fhDabS88zMvMnPfO4Yy4+HCB2Y/vkL8uoSkFOZ1iykgJTdM2GKYJk3Bdd4NHKF3HjOuGAUXnRbFYxP3oCmoqIanAh0zb9hu5gRvZcE7RtCzYVGMcx/HRTQuK8rphQlGPKJfLZKIDeMDjg+ebKDWHRU1srpOx7evlBJwzVnlzNTXrdb/Y39tDb6BweulgZACPZKxbNAVdx6QJDHupLYqmrrCguLBpUvoBa8ciUzJkbZMWpVIJw+ENBoMbyNsx1PVvGOM7eNoM7kwSM3hyCouuM3c9zB13yeJJJDRCdxYQL3Z3Ifs9yM5b3J+f4Pb0Pe6IyVkH47MTjM87VHuHn1++4tO1RHc0JiYbPnO8muDjcIxvEw2iUCjA8Rb4X5/Ypyv3ul1Ujo/RbDZQqVRQr9fRYBoNnybRajapvqLV8vPVahXVWs3v5/P9fh/i5eEhakdHCG9tIZFIIB6Pb4hGo4jFYohEIgiFQhvC4TCCwSACgYDPM9JCCP8nonxwgDevXyGdyeD5zg7y+bxPLpdDhnLpdBrb29tIpVL/wHkmm80imUyi3W7To9Bi87P7a8E7Rq+5Zr1nDO/Z3zytceRF/wMjSdF0eGttYgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 56.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAACBUlEQVQoz62STWtaURCGz1aoGhBduPM/uDcqSvpjxGZhAkFCdwGDnz+gXRV3bYkhSVvqzoW0y5Z2kyJomg+Nx+u5n96bvJ25fhDabS88zMvMnPfO4Yy4+HCB2Y/vkL8uoSkFOZ1iykgJTdM2GKYJk3Bdd4NHKF3HjOuGAUXnRbFYxP3oCmoqIanAh0zb9hu5gRvZcE7RtCzYVGMcx/HRTQuK8rphQlGPKJfLZKIDeMDjg+ebKDWHRU1srpOx7evlBJwzVnlzNTXrdb/Y39tDb6BweulgZACPZKxbNAVdx6QJDHupLYqmrrCguLBpUvoBa8ciUzJkbZMWpVIJw+ENBoMbyNsx1PVvGOM7eNoM7kwSM3hyCouuM3c9zB13yeJJJDRCdxYQL3Z3Ifs9yM5b3J+f4Pb0Pe6IyVkH47MTjM87VHuHn1++4tO1RHc0JiYbPnO8muDjcIxvEw2iUCjA8Rb4X5/Ypyv3ul1Ujo/RbDZQqVRQr9fRYBoNnybRajapvqLV8vPVahXVWs3v5/P9fh/i5eEhakdHCG9tIZFIIB6Pb4hGo4jFYohEIgiFQhvC4TCCwSACgYDPM9JCCP8nonxwgDevXyGdyeD5zg7y+bxPLpdDhnLpdBrb29tIpVL/wHkmm80imUyi3W7To9Bi87P7a8E7Rq+5Zr1nDO/Z3zytceRF/wMjSdF0eGttYgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Build failed at CircleCI dashboard&quot;
         title=&quot;Build failed at CircleCI dashboard&quot;
-        src=&quot;/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/8ff1e/circleci-ghpages_build-failed.png&quot;
-        srcset=&quot;/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/9ec3c/circleci-ghpages_build-failed.png 200w,
-/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/c7805/circleci-ghpages_build-failed.png 400w,
-/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/8ff1e/circleci-ghpages_build-failed.png 800w,
-/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/6ff5e/circleci-ghpages_build-failed.png 1200w,
-/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/0309e/circleci-ghpages_build-failed.png 1280w&quot;
+        src=&quot;/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/5a190/circleci-ghpages_build-failed.png&quot;
+        srcset=&quot;/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/772e8/circleci-ghpages_build-failed.png 200w,
+/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/e17e5/circleci-ghpages_build-failed.png 400w,
+/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/5a190/circleci-ghpages_build-failed.png 800w,
+/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/c1b63/circleci-ghpages_build-failed.png 1200w,
+/static/0cbd2a1bdcc2b988cb2d069a8f58a7bd/21b4d/circleci-ghpages_build-failed.png 1280w&quot;
         sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -72,26 +74,27 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/54cfc52108febe48eb007a83718673a2/0309e/circleci-ghpages_build-skipped.png&quot;
+    href=&quot;/static/54cfc52108febe48eb007a83718673a2/21b4d/circleci-ghpages_build-skipped.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 38.59375%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABgElEQVQoz22QS0/CUBCF+5sIEEICLGpY6M7EhX9TXfgIiQsXRqNo0Qo1PosU6LuFlj7gOHMbiBoXJzO5d+abMyPJsoxms4lyuYxKpYJqtSpyVqlUQqvVQrvdFjn/8zvXNBoN1Go11Ot1yFsytnd2sLu3D0nXdZimCdu2YVmWiK7rwvM8kf+VqCFZP8T9HvVcXnchqaoKx3EwHA4xHo8FjBun0yniOBaKomiTJ0mCxWKBBUXO+S0IAoSku4c+pF6vJyYYhiFgDNcGGpR7hYZ8bRysHTLcC0MkaYblcoksy5CTMspvlUdImqYhz3PM53OhOIrxpn9g8PqMkVE4Xp/A9/3C0WyGNCuA3MtaAeicX0Dq9/vCekhTZ1TI0IH7CcV5genYYh3PL2D8z7UzchlRZCCvz0OWqxWOTs8KYJqmv4BP9ju6poYR3dQnZ3wGdslwBoS8SZIK4Pqm7PDg+OR/4JWhojO8gW6MYJkWJpOJEK/NAJdqAzoNA/mm3JNTfkjAb4NjMtimfhvkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 38.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABgElEQVQoz22QS0/CUBCF+5sIEEICLGpY6M7EhX9TXfgIiQsXRqNo0Qo1PosU6LuFlj7gOHMbiBoXJzO5d+abMyPJsoxms4lyuYxKpYJqtSpyVqlUQqvVQrvdFjn/8zvXNBoN1Go11Ot1yFsytnd2sLu3D0nXdZimCdu2YVmWiK7rwvM8kf+VqCFZP8T9HvVcXnchqaoKx3EwHA4xHo8FjBun0yniOBaKomiTJ0mCxWKBBUXO+S0IAoSku4c+pF6vJyYYhiFgDNcGGpR7hYZ8bRysHTLcC0MkaYblcoksy5CTMspvlUdImqYhz3PM53OhOIrxpn9g8PqMkVE4Xp/A9/3C0WyGNCuA3MtaAeicX0Dq9/vCekhTZ1TI0IH7CcV5genYYh3PL2D8z7UzchlRZCCvz0OWqxWOTs8KYJqmv4BP9ju6poYR3dQnZ3wGdslwBoS8SZIK4Pqm7PDg+OR/4JWhojO8gW6MYJkWJpOJEK/NAJdqAzoNA/mm3JNTfkjAb4NjMtimfhvkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Skipped build on CircleCI dashboard&quot;
         title=&quot;Skipped build on CircleCI dashboard&quot;
-        src=&quot;/static/54cfc52108febe48eb007a83718673a2/8ff1e/circleci-ghpages_build-skipped.png&quot;
-        srcset=&quot;/static/54cfc52108febe48eb007a83718673a2/9ec3c/circleci-ghpages_build-skipped.png 200w,
-/static/54cfc52108febe48eb007a83718673a2/c7805/circleci-ghpages_build-skipped.png 400w,
-/static/54cfc52108febe48eb007a83718673a2/8ff1e/circleci-ghpages_build-skipped.png 800w,
-/static/54cfc52108febe48eb007a83718673a2/6ff5e/circleci-ghpages_build-skipped.png 1200w,
-/static/54cfc52108febe48eb007a83718673a2/0309e/circleci-ghpages_build-skipped.png 1280w&quot;
+        src=&quot;/static/54cfc52108febe48eb007a83718673a2/5a190/circleci-ghpages_build-skipped.png&quot;
+        srcset=&quot;/static/54cfc52108febe48eb007a83718673a2/772e8/circleci-ghpages_build-skipped.png 200w,
+/static/54cfc52108febe48eb007a83718673a2/e17e5/circleci-ghpages_build-skipped.png 400w,
+/static/54cfc52108febe48eb007a83718673a2/5a190/circleci-ghpages_build-skipped.png 800w,
+/static/54cfc52108febe48eb007a83718673a2/c1b63/circleci-ghpages_build-skipped.png 1200w,
+/static/54cfc52108febe48eb007a83718673a2/21b4d/circleci-ghpages_build-skipped.png 1280w&quot;
         sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
