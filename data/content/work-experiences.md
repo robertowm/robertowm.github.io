@@ -11,7 +11,19 @@ work-experience:
     end_year: '2019'
     position: Senior Software Engineer
     start_year: '2019'
-    summary: "I was working with web solutions, on greenfield projects related to its new strategies. Our team wass focused on frontend development, ensuring high-quality systems to our users and integrating them with our modeling solutions and internal APIs, developed in Python.\r\n\nThe most relevant project I participated in was the new user portal. It allows users to manage projects, events, and integrations related to Leapfrog. It is developed using React, Redux, Material UI, and Typescript. Other projects included shared UI components and API integrations, using a similar set of technologies. Also, they were maintained across distributed teams located in New Zealand and Canada."
+    summary: >-
+      I was working with web solutions, on greenfield projects related to its
+      new strategies. Our team was focused on frontend development, ensuring
+      high-quality systems to our users and integrating them with our modeling
+      solutions and internal APIs, developed in Python.
+
+
+      The most relevant project I participated in was the new user portal. It
+      allows users to manage projects, events, and integrations related to
+      Leapfrog. It is developed using React, Redux, Material UI, and Typescript.
+      Other projects included shared UI components and API integrations, using a
+      similar set of technologies. Also, they were maintained across distributed
+      teams located in New Zealand and Canada.
     url: 'https://www.seequent.com/'
   - company: SLI Systems
     end_year: '2019'
