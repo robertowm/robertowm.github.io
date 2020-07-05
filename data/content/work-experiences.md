@@ -1,6 +1,15 @@
 ---
 layout: work-experiences
 work-experience:
+  - end_year: "2020"
+    start_year: "2020"
+    company: Float.com
+    position: Senior Software Engineer
+    summary: At this moment I’m working focused on back-end development, for a
+      remote-first company. My main responsibility is related to integrate
+      Float.com to external services, using NodeJS, React, RabbitMQ, MongoDB,
+      Redis, and MySQL.
+    url: https://www.float.com/
   - company: Magic Memories
     end_year: Invalid date
     position: Senior Software Engineer
@@ -126,13 +135,4 @@ work-experience:
 
       My most relevant projects were _IdUFF_ and _PIBIC_. _IdUFF_ was the academic system at UFF and I worked at the online class enrollment, with around 5000 students accessing during one week each semester. _PIBIC_ is the institutional scientific initiation scholarship program given by CNPQ and I worked managing and developing a web system to manage all scholarship available at UFF.
     url: http://www.sti.uff.br/
-  - end_year: "2020"
-    start_year: "2020"
-    company: Float.com
-    position: Senior Software Engineer
-    summary: At this moment I’m working focused on back-end development, for a
-      remote-first company. My main responsibility is related to integrate
-      Float.com to external services, using NodeJS, React, RabbitMQ, MongoDB,
-      Redis, and MySQL.
-    url: https://www.float.com/
 ---
