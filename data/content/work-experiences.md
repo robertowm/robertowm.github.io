@@ -11,7 +11,7 @@ work-experience:
       Redis, and MySQL.
     url: https://www.float.com/
   - company: Magic Memories
-    end_year: Invalid date
+    end_year: "2020"
     position: Senior Software Engineer
     start_year: "2019"
     summary: "At this moment I’m working with web solutions related to our new
