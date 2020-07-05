@@ -1,7 +1,7 @@
 ---
 layout: work-experiences
 work-experience:
-  - end_year: "2020"
+  - end_year: Invalid date
     start_year: "2020"
     company: Float.com
     position: Senior Software Engineer
