@@ -14,26 +14,17 @@ work-experience:
     end_year: "2020"
     position: Senior Software Engineer
     start_year: "2019"
-    summary: "At this moment I’m working with web solutions related to our new
-      products. As a remote team, we're focused on agile principles to deliver
-      new features as fast as possible, heavily focused on MVPs, and continuous
-      improvements on our features.\r
+    summary: >-
+      I was working with web solutions related to their new products. As a
+      remote team, we're focused on agile principles to deliver new features as
+      fast as possible, heavily focused on MVPs, and continuous improvements on
+      our features.
 
 
-      Our team's main focus is on developing new features to our main web
-      platform, focused on selling and distribution of media to our customers.
-      It is developed using a wide set of technologies related to modern web and
-      microservices architecture. The most relevant technologies are Spring
-      Boot, Spring Cloud, Angular, Typescript, Angular Material, MySQL, Redis,
-      Kubernetes, and AWS.\r
+      Our team's main focus was on developing new features to our main web platform, focused on selling and distribution of media to our customers. It was developed using a wide set of technologies related to modern web and microservices architecture. The most relevant technologies were Spring Boot, Spring Cloud, Angular, Typescript, Angular Material, MySQL, Redis, Kubernetes, and AWS.
 
 
-      One of the main tasks I worked on recently is prototyping image
-      processing algorithms for automatically applying templates on guest
-      photos, focused on improving our product quality and reducing operational
-      costs. Also, I participated in several major changes across the whole
-      solution, like refactoring the analytics layer on the Front End project,
-      to improve data quality and maintainability."
+      One of the main tasks I worked on  was prototyping image processing algorithms for automatically applying templates on guest photos, focused on improving our product quality and reducing operational costs. Also, I participated in several major changes across the whole solution, like refactoring the analytics layer on the Front End project, to improve data quality and maintainability.
     url: https://www.magicmemories.com/
   - company: Seequent
     end_year: "2019"
