@@ -1,11 +1,34 @@
 [
   {
     "end_year": null,
+    "start_year": "2024",
+    "company": "Float.com",
+    "position": "Senior Staff Software Engineer (Architecture)",
+    "summary": [
+      "Current role focused on high-level architecture and technical strategy at a global scale."
+    ],
+    "url": "https://www.float.com/"
+  },
+  {
+    "end_year": "2024",
+    "start_year": "2022",
+    "company": "Float.com",
+    "position": "Staff Software Engineer / Divisional Lead, Architecture & Strategy",
+    "summary": [
+      "Worked as Divisional Lead, responsible for Architecture and Strategy decisions on Float.",
+      "Main goals were to provide direction to the Application Division, ensure quality of our solutions and plan our approach as we grow.",
+      "Tech owner of integrations and the Reports API."
+    ],
+    "url": "https://www.float.com/"
+  },
+  {
+    "end_year": "2022",
     "start_year": "2020",
     "company": "Float.com",
-    "position": "Engineering Lead",
+    "position": "Senior Software Engineer",
     "summary": [
-      "Leading engineering efforts at Float, a remote-first company focused on resource scheduling. Responsible for technical strategy, team mentorship, and integrating Float with external services using NodeJS, React, RabbitMQ, MongoDB, Redis, and MySQL."
+      "Focused on back-end development for a remote-first company.",
+      "Main responsibility was integrating Float.com with external services, using NodeJS, React, RabbitMQ, MongoDB, Redis, and MySQL."
     ],
     "url": "https://www.float.com/"
   },
