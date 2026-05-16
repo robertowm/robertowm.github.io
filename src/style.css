@@ -1,17 +1,33 @@
 :root {
-    /* Synthwave / Dark Mode Colors */
-    --bg-color: #0d0221;
-    --text-color: #e0e0e0;
-    --accent-color: #ff00ff; /* Neon Magenta */
-    --secondary-accent: #00ffff; /* Neon Cyan */
-    --card-bg: #1a0b2e;
-    --grid-color: rgba(0, 255, 255, 0.1);
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Refined Minimalist Synthwave */
+    --bg-color: #050505;
+    --text-color: #d1d1d1;
+    --accent-color: #ff00ff; /* Neon Magenta - used sparingly */
+    --secondary-accent: #00ffff; /* Neon Cyan - used sparingly */
+    --card-bg: #0f0f0f;
+    --border-color: #222;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-@media (prefers-color-scheme: light) {
-    /* Optional: Subtle adjustment if user prefers light, 
-       but we keep synthwave dark by default as requested. */
+/* Doom (Apocalyptic) Theme Overrides */
+[data-theme="doom"] {
+    --bg-color: #0a0a0a;
+    --text-color: #999;
+    --accent-color: #7a0000; /* Dried Blood Red */
+    --secondary-accent: #ff4500; /* Ember Orange */
+    --card-bg: #111;
+    --border-color: #331111;
+}
+
+[data-theme="doom"] h1, 
+[data-theme="doom"] h2 {
+    color: var(--secondary-accent);
+    text-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+}
+
+[data-theme="doom"] .card:hover {
+    border-color: var(--secondary-accent);
+    box-shadow: 0 0 10px rgba(122, 0, 0, 0.5);
 }
 
 body {
@@ -21,69 +37,120 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-image: 
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 50px 50px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 700px; /* Narrower for better focus */
     margin: 0 auto;
     padding: 2rem;
 }
 
 header {
-    text-align: center;
-    padding: 4rem 0;
-    border-bottom: 2px solid var(--accent-color);
-    box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
+    padding: 6rem 0 3rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-h1, h2, h3 {
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 1.5rem;
     color: var(--secondary-accent);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px var(--secondary-accent);
+    margin-top: 4rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-top: 0;
 }
 
 a {
-    color: var(--accent-color);
+    color: var(--secondary-accent);
     text-decoration: none;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
 a:hover {
-    text-shadow: 0 0 8px var(--accent-color);
+    border-bottom-color: var(--secondary-accent);
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-top: 2rem;
 }
 
 .card {
     background: var(--card-bg);
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--border-color);
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border-radius: 4px;
-    box-shadow: 3px 3px 0px var(--accent-color);
+    transition: border-color 0.3s ease;
 }
 
-.bio {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
+.card:hover {
+    border-color: var(--accent-color);
+}
+
+.neon-text {
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 .section {
     margin-bottom: 4rem;
 }
 
-footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    opacity: 0.7;
+ul {
+    padding-left: 1.2rem;
+    color: #aaa;
 }
 
-/* Utilities */
-.neon-text {
-    color: var(--accent-color);
-    text-shadow: 0 0 5px var(--accent-color);
+li {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: left;
+    padding: 4rem 0;
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+}
+
+/* Theme Switcher Button */
+.theme-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.8rem;
+    z-index: 1000;
+    text-transform: uppercase;
+}
+
+.theme-switch:hover {
+    border-color: var(--secondary-accent);
 }

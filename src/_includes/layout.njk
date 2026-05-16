@@ -6,7 +6,8 @@
     <title>{{ profile.full_name }} | {{ title }}</title>
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body data-theme="default">
+    <button class="theme-switch" id="theme-toggle">Theme: Synth</button>
     <header>
         <div class="container">
             <h1>{{ profile.full_name }}</h1>
@@ -24,5 +25,28 @@
             <p>Built with 11ty - Minimalist & Fast</p>
         </div>
     </footer>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Load preference
+        const savedTheme = localStorage.getItem('theme') || 'default';
+        body.setAttribute('data-theme', savedTheme);
+        updateButtonText(savedTheme);
+
+        toggle.addEventListener('click', () => {
+            const current = body.getAttribute('data-theme');
+            const next = current === 'default' ? 'doom' : 'default';
+            
+            body.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            updateButtonText(next);
+        });
+
+        function updateButtonText(theme) {
+            toggle.innerText = theme === 'default' ? 'Theme: Synth' : 'Theme: Doom';
+        }
+    </script>
 </body>
 </html>
