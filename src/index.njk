@@ -1,0 +1,60 @@
+---
+layout: layout.njk
+title: Home
+---
+
+<section class="bio section">
+    {% for paragraph in profile.bio %}
+        <p>{{ paragraph }}</p>
+    {% endfor %}
+</section>
+
+<section class="section">
+    <h2>Work Experience</h2>
+    {% for job in work %}
+        <div class="card">
+            <h3>{{ job.position }} @ <a href="{{ job.url }}">{{ job.company }}</a></h3>
+            <p class="neon-text">{{ job.start_year }} - {{ job.end_year or "Present" }}</p>
+            {% for p in job.summary %}
+                <p>{{ p }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</section>
+
+<section class="section">
+    <h2>Projects</h2>
+    {% for project in projects %}
+        <div class="card">
+            <h3>{{ project.name }} ({{ project.year }})</h3>
+            <p><strong>{{ project.company }}</strong></p>
+            {% for p in project.content %}
+                <p>{{ p }}</p>
+            {% endfor %}
+            {% if project.url %}
+                <p><a href="{{ project.url }}" target="_blank">View Project &rarr;</a></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</section>
+
+<section class="section">
+    <h2>Qualifications</h2>
+    <div class="card">
+        <h3>Education</h3>
+        <ul>
+        {% for edu in qualifications.education %}
+            <li><strong>{{ edu.title }}</strong>, {{ edu.institution }} ({{ edu.start_year }} - {{ edu.end_year }})</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Certifications</h3>
+        <ul>
+        {% for cert in qualifications.certifications %}
+            <li><a href="{{ cert.url }}">{{ cert.name }}</a> - {{ cert.institutions | join(', ') }} ({{ cert.date }})</li>
+        {% endfor %}
+        </ul>
+    </div>
+</section>
