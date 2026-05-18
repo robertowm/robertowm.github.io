@@ -306,6 +306,53 @@ a:hover {
     border-left: 2px solid var(--border-color);
 }
 
+/* Work Experience Refinement */
+.experience-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+[data-theme="brutalist"] .company-name,
+[data-theme="brutalist-dark"] .company-name {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.role-entry {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--border-color);
+}
+
+.role-entry:last-child {
+    margin-bottom: 0;
+}
+
+.role-title {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+[data-theme="brutalist"] .role-title {
+    color: #000;
+}
+
+.role-dates {
+    margin: 0.25rem 0 1rem;
+    font-size: 0.85rem;
+}
+
+.role-summary {
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
 .section {
     margin-bottom: 4rem;
 }

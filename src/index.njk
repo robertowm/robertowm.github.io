@@ -11,12 +11,18 @@ title: Home
 
 <section class="section">
     <h2>Work Experience</h2>
-    {% for job in work %}
-        <div class="card">
-            <h3>{{ job.position }} @ <a href="{{ job.url }}">{{ job.company }}</a></h3>
-            <p class="neon-text">{{ job.start_year }} - {{ job.end_year or "Present" }}</p>
-            {% for p in job.summary %}
-                <p>{{ p }}</p>
+    {% for entry in work %}
+        <div class="card experience-card">
+            <h3 class="company-name">{% if entry.url != "#" %}<a href="{{ entry.url }}">{% endif %}{{ entry.company }}{% if entry.url != "#" %}</a>{% endif %}</h3>
+            
+            {% for role in entry.roles %}
+                <div class="role-entry">
+                    <h4 class="role-title">{{ role.position }}</h4>
+                    <p class="neon-text role-dates">{{ role.start_year }} - {{ role.end_year or "Present" }}</p>
+                    {% for p in role.summary %}
+                        <p class="role-summary">{{ p }}</p>
+                    {% endfor %}
+                </div>
             {% endfor %}
         </div>
     {% endfor %}
