@@ -3,13 +3,20 @@ layout: layout.njk
 title: Home
 ---
 
+<nav class="section-nav">
+    <a href="#work">Work</a>
+    <a href="#writing">Writing</a>
+    <a href="#projects">Projects</a>
+    <a href="#background">Background</a>
+</nav>
+
 <section class="bio section">
     {% for paragraph in profile.bio %}
         <p>{{ paragraph | md | safe }}</p>
     {% endfor %}
 </section>
 
-<section class="section">
+<section id="work" class="section">
     <h2>Work Experience</h2>
     {% for entry in work %}
         <div class="card experience-card">
@@ -29,7 +36,7 @@ title: Home
 </section>
 
 {% if collections.posts.length > 0 %}
-<section class="section">
+<section id="writing" class="section">
     <h2>Latest Posts</h2>
     <ul class="post-list-compact">
     {% for post in collections.posts %}
@@ -43,7 +50,7 @@ title: Home
 </section>
 {% endif %}
 
-<section class="section">
+<section id="projects" class="section">
     <h2>Projects</h2>
     {% for project in projects %}
         <details class="project-details">
@@ -63,7 +70,7 @@ title: Home
     {% endfor %}
 </section>
 
-<section class="section">
+<section id="background" class="section">
     <h2>Background</h2>
     <div class="background-grid">
         <div class="background-group">
