@@ -326,40 +326,46 @@ footer {
 
 .brutalist-switch {
     background: var(--card-bg);
-    border: 2px solid var(--border-color);
+    border: 3px solid var(--border-color);
     color: var(--text-color);
-    padding: 0;
+    padding: 0.25rem;
     cursor: pointer;
-    font-family: monospace;
-    font-size: 0.8rem;
-    font-weight: bold;
     display: flex;
-    align-items: stretch;
+    position: relative;
     border-radius: 0;
-}
-
-.switch-label {
-    padding: 0.25rem 0.5rem;
-    border-right: 2px solid var(--border-color);
-    opacity: 0.6;
+    transition: box-shadow 0.2s ease;
 }
 
 .switch-opt {
     padding: 0.25rem 0.6rem;
-    display: flex;
-    align-items: center;
+    font-size: 1.2rem;
+    z-index: 1;
+    transition: color 0.3s ease;
 }
 
-.switch-opt:last-child {
-    border-left: 2px solid var(--border-color);
+.brutalist-switch::before {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    width: calc(50% - 0.25rem);
+    background-color: var(--text-color);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="brutalist"] .brutalist-switch::before {
+    transform: translateX(0);
+}
+
+[data-theme="brutalist-dark"] .brutalist-switch::before {
+    transform: translateX(100%);
 }
 
 [data-theme="brutalist"] .opt-light,
 [data-theme="brutalist-dark"] .opt-dark {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    filter: invert(1);
 }
 
 .brutalist-switch:hover {
-    box-shadow: 4px 4px 0 var(--border-color);
+    box-shadow: 6px 6px 0 var(--border-color);
 }
