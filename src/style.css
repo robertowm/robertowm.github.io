@@ -221,7 +221,7 @@ a:hover {
 .card:hover {
     border-color: var(--accent-color);
 }
-
+/* Utilities */
 .neon-text {
     color: var(--accent-color);
     font-family: monospace;
@@ -229,9 +229,85 @@ a:hover {
     text-transform: uppercase;
 }
 
+/* Projects & Background Refinement */
+.project-details {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.project-details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none; /* Hide default arrow */
+}
+
+.project-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-details summary::after {
+    content: '+';
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: var(--secondary-accent);
+}
+
+.project-details[open] summary::after {
+    content: '-';
+}
+
+.project-title {
+    color: #fff;
+}
+
+[data-theme="brutalist"] .project-title {
+    color: #000;
+}
+
+.project-company {
+    font-family: monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.project-content {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+.background-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    .background-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.minimal-list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.minimal-list li {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--border-color);
+}
+
 .section {
     margin-bottom: 4rem;
 }
+
 
 ul {
     padding-left: 1.2rem;

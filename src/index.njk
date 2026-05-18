@@ -25,36 +25,42 @@ title: Home
 <section class="section">
     <h2>Projects</h2>
     {% for project in projects %}
-        <div class="card">
-            <h3>{{ project.name }} ({{ project.year }})</h3>
-            <p><strong>{{ project.company }}</strong></p>
-            {% for p in project.content %}
-                <p>{{ p }}</p>
-            {% endfor %}
-            {% if project.url %}
-                <p><a href="{{ project.url }}" target="_blank">View Project &rarr;</a></p>
-            {% endif %}
-        </div>
+        <details class="project-details">
+            <summary>
+                <span class="project-title">{{ project.name }} ({{ project.year }})</span>
+                <span class="project-company">{{ project.company }}</span>
+            </summary>
+            <div class="project-content">
+                {% for p in project.content %}
+                    <p>{{ p }}</p>
+                {% endfor %}
+                {% if project.url %}
+                    <p><a href="{{ project.url }}" target="_blank">View Project &rarr;</a></p>
+                {% endif %}
+            </div>
+        </details>
     {% endfor %}
 </section>
 
 <section class="section">
-    <h2>Qualifications</h2>
-    <div class="card">
-        <h3>Education</h3>
-        <ul>
-        {% for edu in qualifications.education %}
-            <li><strong>{{ edu.title }}</strong>, {{ edu.institution }} ({{ edu.start_year }} - {{ edu.end_year }})</li>
-        {% endfor %}
-        </ul>
-    </div>
+    <h2>Background</h2>
+    <div class="background-grid">
+        <div class="background-group">
+            <h3>Education</h3>
+            <ul class="minimal-list">
+            {% for edu in qualifications.education %}
+                <li><strong>{{ edu.title }}</strong>, {{ edu.institution }} ({{ edu.start_year }} - {{ edu.end_year }})</li>
+            {% endfor %}
+            </ul>
+        </div>
 
-    <div class="card">
-        <h3>Certifications</h3>
-        <ul>
-        {% for cert in qualifications.certifications %}
-            <li><a href="{{ cert.url }}">{{ cert.name }}</a> - {{ cert.institutions | join(', ') }} ({{ cert.date }})</li>
-        {% endfor %}
-        </ul>
+        <div class="background-group">
+            <h3>Certifications</h3>
+            <ul class="minimal-list">
+            {% for cert in qualifications.certifications %}
+                <li><a href="{{ cert.url }}">{{ cert.name }}</a> - {{ cert.institutions | join(', ') }}</li>
+            {% endfor %}
+            </ul>
+        </div>
     </div>
 </section>
