@@ -5,7 +5,7 @@ title: Home
 
 <section class="bio section">
     {% for paragraph in profile.bio %}
-        <p>{{ paragraph }}</p>
+        <p>{{ paragraph | md | safe }}</p>
     {% endfor %}
 </section>
 
@@ -20,7 +20,7 @@ title: Home
                     <h4 class="role-title">{{ role.position }}</h4>
                     <p class="neon-text role-dates">{{ role.start_year }} - {{ role.end_year or "Present" }}</p>
                     {% for p in role.summary %}
-                        <p class="role-summary">{{ p }}</p>
+                        <p class="role-summary">{{ p | md | safe }}</p>
                     {% endfor %}
                 </div>
             {% endfor %}
@@ -38,7 +38,7 @@ title: Home
             </summary>
             <div class="project-content">
                 {% for p in project.content %}
-                    <p>{{ p }}</p>
+                    <p>{{ p | md | safe }}</p>
                 {% endfor %}
                 {% if project.url %}
                     <p><a href="{{ project.url }}" target="_blank">View Project &rarr;</a></p>

@@ -1,4 +1,15 @@
 module.exports = function(eleventyConfig) {
+  const markdownIt = require("markdown-it");
+  const md = markdownIt({
+    html: true,
+    linkify: true,
+    typographer: true
+  });
+
+  eleventyConfig.addFilter("md", (content) => {
+    return md.renderInline(content);
+  });
+
   // Pass-through static assets
   eleventyConfig.addPassthroughCopy("static");
   eleventyConfig.addPassthroughCopy("src/style.css");
