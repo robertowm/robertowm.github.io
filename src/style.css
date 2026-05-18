@@ -30,6 +30,90 @@
     box-shadow: 0 0 10px rgba(122, 0, 0, 0.5);
 }
 
+/* Brutalist Theme Overrides */
+[data-theme="brutalist"] {
+    --bg-color: #fff;
+    --text-color: #000;
+    --accent-color: #000;
+    --secondary-accent: #000;
+    --card-bg: #fff;
+    --border-color: #000;
+    --font-main: 'Archivo Black', sans-serif;
+}
+
+[data-theme="brutalist"] body {
+    background-image: none;
+}
+
+[data-theme="brutalist"] h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.8;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+[data-theme="brutalist"] h2 {
+    font-size: 3rem;
+    border-bottom: 8px solid #000;
+    color: #000;
+}
+
+[data-theme="brutalist"] .card {
+    border: 4px solid #000;
+    box-shadow: 10px 10px 0 #000;
+    border-radius: 0;
+}
+
+/* Terminal Theme Overrides */
+[data-theme="terminal"] {
+    --bg-color: #000;
+    --text-color: #0f0;
+    --accent-color: #0f0;
+    --secondary-accent: #0f0;
+    --card-bg: #000;
+    --border-color: #0f0;
+    --font-main: 'Courier New', Courier, monospace;
+}
+
+[data-theme="terminal"] body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+[data-theme="terminal"] h1::before {
+    content: "> ";
+}
+
+/* Glass Theme Overrides */
+[data-theme="glass"] {
+    --bg-color: #0a0e17;
+    --text-color: #fff;
+    --accent-color: #ff00ff;
+    --secondary-accent: #00ffff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="glass"] body {
+    background: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+    min-height: 100vh;
+}
+
+[data-theme="glass"] .card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -135,22 +219,32 @@ footer {
     }
 }
 
-/* Theme Switcher Button */
-.theme-switch {
+/* Theme Switcher UI */
+.theme-switch-container {
     position: fixed;
     top: 1rem;
     right: 1rem;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     color: var(--text-color);
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: monospace;
     font-size: 0.8rem;
-    z-index: 1000;
+}
+
+.theme-switch-container select {
+    background: transparent;
+    color: inherit;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
     text-transform: uppercase;
 }
 
-.theme-switch:hover {
-    border-color: var(--secondary-accent);
+.theme-switch-container select:focus {
+    outline: none;
 }

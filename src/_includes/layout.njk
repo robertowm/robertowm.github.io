@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ profile.full_name }} | {{ title }}</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body data-theme="default">
-    <button class="theme-switch" id="theme-toggle">Theme: Synth</button>
+    <div class="theme-switch-container">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select">
+            <option value="default">Synthwave</option>
+            <option value="doom">Doom</option>
+            <option value="brutalist">Brutalist</option>
+            <option value="terminal">Terminal</option>
+            <option value="glass">Glass</option>
+        </select>
+    </div>
     <header>
         <div class="container">
             <h1>{{ profile.full_name }}</h1>
@@ -27,26 +39,19 @@
     </footer>
 
     <script>
-        const toggle = document.getElementById('theme-toggle');
+        const select = document.getElementById('theme-select');
         const body = document.body;
         
         // Load preference
         const savedTheme = localStorage.getItem('theme') || 'default';
         body.setAttribute('data-theme', savedTheme);
-        updateButtonText(savedTheme);
+        select.value = savedTheme;
 
-        toggle.addEventListener('click', () => {
-            const current = body.getAttribute('data-theme');
-            const next = current === 'default' ? 'doom' : 'default';
-            
+        select.addEventListener('change', (e) => {
+            const next = e.target.value;
             body.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
-            updateButtonText(next);
         });
-
-        function updateButtonText(theme) {
-            toggle.innerText = theme === 'default' ? 'Theme: Synth' : 'Theme: Doom';
-        }
     </script>
 </body>
 </html>
