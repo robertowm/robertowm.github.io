@@ -10,6 +10,18 @@ module.exports = function(eleventyConfig) {
     return md.renderInline(content);
   });
 
+  eleventyConfig.addFilter("dateFilter", (dateObj) => {
+    return dateObj.toLocaleDateString('en-AU', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  });
+
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/posts/*.md").reverse();
+  });
+
   // Pass-through static assets
   eleventyConfig.addPassthroughCopy("static");
   eleventyConfig.addPassthroughCopy("src/style.css");

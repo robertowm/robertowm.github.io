@@ -357,6 +357,56 @@ a:hover {
     margin-bottom: 4rem;
 }
 
+/* Blog Styles */
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    margin-bottom: 1rem;
+}
+
+.post-link {
+    display: flex;
+    gap: 2rem;
+    align-items: baseline;
+    border-bottom: 1px solid transparent;
+}
+
+.post-link:hover {
+    border-bottom: 1px solid var(--secondary-accent);
+}
+
+.post-date {
+    font-family: monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    min-width: 150px;
+}
+
+.post-title {
+    font-weight: bold;
+    color: #fff;
+}
+
+[data-theme="brutalist"] .post-title {
+    color: #000;
+}
+
+.markdown-body {
+    margin: 2rem 0;
+}
+
+.markdown-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
 
 ul {
     padding-left: 1.2rem;
