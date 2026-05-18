@@ -3,13 +3,6 @@ layout: layout.njk
 title: Home
 ---
 
-<nav class="section-nav">
-    <a href="#work">Work</a>
-    <a href="#writing">Writing</a>
-    <a href="#projects">Projects</a>
-    <a href="#background">Background</a>
-</nav>
-
 <section class="bio section">
     {% for paragraph in profile.bio %}
         <p>{{ paragraph | md | safe }}</p>
