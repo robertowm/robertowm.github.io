@@ -348,11 +348,14 @@ footer {
     border: none !important;
     white-space: nowrap;
     margin-right: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
 }
 
-.nav-home:hover {
-    background: transparent !important;
-    color: var(--secondary-accent) !important;
+.section-nav.is-sticky .nav-home {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .brutalist-switch {

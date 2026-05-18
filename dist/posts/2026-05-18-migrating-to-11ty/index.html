@@ -88,6 +88,8 @@
     <script>
         const html = document.documentElement;
         const brutalistToggle = document.getElementById('brutalist-toggle');
+        const sectionNav = document.querySelector('.section-nav');
+        const header = document.querySelector('header');
         
         // Dark/Light Toggle Logic
         brutalistToggle.addEventListener('click', () => {
@@ -97,6 +99,19 @@
             html.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
         });
+
+        // Sticky Name Visibility Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sectionNav.classList.remove('is-sticky');
+                } else {
+                    sectionNav.classList.add('is-sticky');
+                }
+            });
+        }, { threshold: 0 });
+
+        observer.observe(header);
     </script>
 </body>
 </html>
