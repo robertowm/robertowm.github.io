@@ -328,13 +328,16 @@ footer {
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     color: var(--text-color);
-    padding: 0.5rem;
+    padding: 0.25rem 0.75rem;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0;
+    text-transform: uppercase;
 }
 
 .icon-toggle:hover {
