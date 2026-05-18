@@ -341,6 +341,20 @@ footer {
     flex-wrap: wrap;
 }
 
+.nav-home {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none !important;
+    white-space: nowrap;
+    margin-right: 1rem;
+}
+
+.nav-home:hover {
+    background: transparent !important;
+    color: var(--secondary-accent) !important;
+}
+
 .brutalist-switch {
     background: var(--card-bg);
     border: 2px solid var(--border-color);
