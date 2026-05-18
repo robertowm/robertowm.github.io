@@ -8,8 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', prefersDark ? 'brutalist-dark' : 'brutalist');
+            }
+        })();
+    </script>
 </head>
-<body data-theme="brutalist-dark">
+<body>
     <div class="top-controls">
         <button id="brutalist-toggle" class="icon-toggle" title="Toggle Dark/Light">
             <span class="sun-icon">☀️</span>
@@ -316,19 +327,15 @@
     </footer>
 
     <script>
-        const body = document.body;
+        const html = document.documentElement;
         const brutalistToggle = document.getElementById('brutalist-toggle');
         
-        // Load preference
-        const savedTheme = localStorage.getItem('theme') || 'brutalist-dark';
-        body.setAttribute('data-theme', savedTheme);
-
         // Dark/Light Toggle Logic
         brutalistToggle.addEventListener('click', () => {
-            const current = body.getAttribute('data-theme');
+            const current = html.getAttribute('data-theme');
             const next = current === 'brutalist-dark' ? 'brutalist' : 'brutalist-dark';
             
-            body.setAttribute('data-theme', next);
+            html.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
         });
     </script>
