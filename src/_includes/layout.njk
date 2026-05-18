@@ -15,20 +15,6 @@
             <span class="sun-icon">☀️</span>
             <span class="moon-icon">🌙</span>
         </button>
-
-        {% if env.isDev %}
-        <div class="theme-switch-container">
-            <label for="theme-select">Dev:</label>
-            <select id="theme-select">
-                <option value="default">Synthwave</option>
-                <option value="doom">Doom</option>
-                <option value="brutalist">Brutalist</option>
-                <option value="brutalist-dark">Brutalist Dark</option>
-                <option value="terminal">Terminal</option>
-                <option value="glass">Glass</option>
-            </select>
-        </div>
-        {% endif %}
     </div>
     <header>
         <div class="container">
@@ -51,40 +37,19 @@
     <script>
         const body = document.body;
         const brutalistToggle = document.getElementById('brutalist-toggle');
-        const themeSelect = document.getElementById('theme-select');
         
         // Load preference
         const savedTheme = localStorage.getItem('theme') || 'brutalist-dark';
         body.setAttribute('data-theme', savedTheme);
-        if (themeSelect) themeSelect.value = savedTheme;
 
         // Dark/Light Toggle Logic
         brutalistToggle.addEventListener('click', () => {
             const current = body.getAttribute('data-theme');
-            let next;
+            const next = current === 'brutalist-dark' ? 'brutalist' : 'brutalist-dark';
             
-            if (current === 'brutalist-dark') {
-                next = 'brutalist';
-            } else if (current === 'brutalist') {
-                next = 'brutalist-dark';
-            } else {
-                // If in another theme, toggle to the opposite of current preference or just light
-                next = current.includes('dark') || current === 'default' || current === 'doom' || current === 'terminal' || current === 'glass' ? 'brutalist' : 'brutalist-dark';
-            }
-
-            setTheme(next);
+            body.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
         });
-
-        // Dev Select Logic
-        if (themeSelect) {
-            themeSelect.addEventListener('change', (e) => setTheme(e.target.value));
-        }
-
-        function setTheme(theme) {
-            body.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            if (themeSelect) themeSelect.value = theme;
-        }
     </script>
 </body>
 </html>

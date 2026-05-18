@@ -1,73 +1,4 @@
 :root {
-    /* Refined Minimalist Synthwave */
-    --bg-color: #050505;
-    --text-color: #f0f0f0;
-    --accent-color: #ff00ff; /* Neon Magenta - used sparingly */
-    --secondary-accent: #00ffff; /* Neon Cyan - used sparingly */
-    --card-bg: #0a0a0a;
-    --border-color: #1a1a1a;
-    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Doom (Apocalyptic) Theme Overrides */
-[data-theme="doom"] {
-    --bg-color: #080000;
-    --text-color: #e0d0d0;
-    --accent-color: #8b0000; /* Deep Red */
-    --secondary-accent: #ff4500; /* Ember Orange */
-    --card-bg: #120000;
-    --border-color: #400;
-}
-
-[data-theme="doom"] h1, 
-[data-theme="doom"] h2 {
-    color: var(--secondary-accent);
-    text-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
-}
-
-[data-theme="doom"] .card:hover {
-    border-color: var(--secondary-accent);
-    box-shadow: 0 0 10px rgba(122, 0, 0, 0.5);
-}
-
-/* Brutalist Theme Overrides */
-[data-theme="brutalist"] {
-    --bg-color: #fcfcfc;
-    --text-color: #000;
-    --accent-color: #000;
-    --secondary-accent: #000;
-    --card-bg: #fff;
-    --border-color: #000;
-    --font-main: 'Archivo Black', sans-serif;
-}
-
-[data-theme="brutalist"] body {
-    background-image: none;
-}
-
-[data-theme="brutalist"] h1 {
-    font-size: 5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.8;
-    margin-bottom: 2rem;
-    color: #000;
-}
-
-[data-theme="brutalist"] h2 {
-    font-size: 3rem;
-    border-bottom: 8px solid #000;
-    color: #000;
-}
-
-[data-theme="brutalist"] .card {
-    border: 4px solid #000;
-    box-shadow: 10px 10px 0 #000;
-    border-radius: 0;
-}
-
-/* Brutalist Dark Theme Overrides */
-[data-theme="brutalist-dark"] {
     --bg-color: #000;
     --text-color: #fff;
     --accent-color: #fff;
@@ -77,77 +8,24 @@
     --font-main: 'Archivo Black', sans-serif;
 }
 
-[data-theme="brutalist-dark"] body {
-    background-image: none;
+/* Brutalist (Light) Theme Overrides */
+[data-theme="brutalist"] {
+    --bg-color: #fcfcfc;
+    --text-color: #000;
+    --accent-color: #000;
+    --secondary-accent: #000;
+    --card-bg: #fff;
+    --border-color: #000;
 }
 
-[data-theme="brutalist-dark"] h1 {
-    font-size: 5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.8;
-    margin-bottom: 2rem;
-    color: #fff;
-}
-
-[data-theme="brutalist-dark"] h2 {
-    font-size: 3rem;
-    border-bottom: 8px solid #fff;
-    color: #fff;
-}
-
-[data-theme="brutalist-dark"] .card {
-    border: 4px solid #fff;
-    box-shadow: 10px 10px 0 #fff;
-    border-radius: 0;
-}
-
-/* Terminal Theme Overrides */
-[data-theme="terminal"] {
+/* Brutalist Dark Theme (Default variables already set to this) */
+[data-theme="brutalist-dark"] {
     --bg-color: #000;
-    --text-color: #0f0;
-    --accent-color: #0f0;
-    --secondary-accent: #0f0;
+    --text-color: #fff;
+    --accent-color: #fff;
+    --secondary-accent: #fff;
     --card-bg: #000;
-    --border-color: #0f0;
-    --font-main: 'Courier New', Courier, monospace;
-}
-
-[data-theme="terminal"] body::before {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    z-index: 2;
-    background-size: 100% 2px, 3px 100%;
-    pointer-events: none;
-}
-
-[data-theme="terminal"] h1::before {
-    content: "> ";
-}
-
-/* Glass Theme Overrides */
-[data-theme="glass"] {
-    --bg-color: #0a0e17;
-    --text-color: #f0f0f0;
-    --accent-color: #ff00ff;
-    --secondary-accent: #00ffff;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --border-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="glass"] body {
-    background: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
-    min-height: 100vh;
-}
-
-[data-theme="glass"] .card {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --border-color: #fff;
 }
 
 body {
@@ -157,10 +35,11 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    max-width: 700px; /* Narrower for better focus */
+    max-width: 700px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -171,139 +50,63 @@ header {
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #fff;
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.8;
+    margin: 0 0 2rem 0;
     letter-spacing: -1px;
 }
 
 h2 {
-    font-size: 1.5rem;
-    color: var(--secondary-accent);
+    font-size: 3rem;
     margin-top: 4rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 8px solid var(--border-color);
     padding-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 
 h3 {
-    font-size: 1.1rem;
-    color: #fff;
+    font-size: 1.5rem;
     margin-top: 0;
+    text-transform: uppercase;
 }
 
 a {
-    color: var(--secondary-accent);
+    color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
+    border-bottom: 2px solid var(--border-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a:hover {
-    border-bottom-color: var(--secondary-accent);
+    background-color: var(--text-color);
+    color: var(--bg-color);
 }
 
 .bio {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    opacity: 0.8;
+    font-size: 1.2rem;
     margin-top: 2rem;
 }
 
 .card {
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: 4px solid var(--border-color);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
+    border-radius: 0;
+    box-shadow: 10px 10px 0 var(--border-color);
 }
 
-.card:hover {
-    border-color: var(--accent-color);
-}
-/* Utilities */
 .neon-text {
-    color: var(--accent-color);
     font-family: monospace;
     font-size: 0.9rem;
     text-transform: uppercase;
+    opacity: 0.8;
 }
 
-/* Projects & Background Refinement */
-.project-details {
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
-}
-
-.project-details summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: bold;
-    list-style: none; /* Hide default arrow */
-}
-
-.project-details summary::-webkit-details-marker {
-    display: none;
-}
-
-.project-details summary::after {
-    content: '+';
-    font-family: monospace;
-    font-size: 1.5rem;
-    color: var(--secondary-accent);
-}
-
-.project-details[open] summary::after {
-    content: '-';
-}
-
-.project-title {
-    color: #fff;
-}
-
-[data-theme="brutalist"] .project-title {
-    color: #000;
-}
-
-.project-company {
-    margin-left: auto;
-    margin-right: 1.5rem;
-    font-family: monospace;
-    font-size: 0.8rem;
-    opacity: 0.6;
-    text-transform: uppercase;
-}
-
-.project-content {
-    padding: 1rem 0;
-    font-size: 0.95rem;
-    color: #aaa;
-}
-
-.background-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-@media (max-width: 600px) {
-    .background-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.minimal-list {
-    list-style: none;
-    padding: 0;
-    font-size: 0.9rem;
-}
-
-.minimal-list li {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    border-left: 2px solid var(--border-color);
+.section {
+    margin-bottom: 4rem;
 }
 
 /* Work Experience Refinement */
@@ -315,10 +118,6 @@ a:hover {
 .company-name {
     margin-bottom: 2rem;
     font-size: 1.5rem;
-}
-
-[data-theme="brutalist"] .company-name,
-[data-theme="brutalist-dark"] .company-name {
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
@@ -326,7 +125,7 @@ a:hover {
 .role-entry {
     margin-bottom: 2rem;
     padding-left: 1.5rem;
-    border-left: 1px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
 }
 
 .role-entry:last-child {
@@ -335,26 +134,15 @@ a:hover {
 
 .role-title {
     margin: 0;
-    font-size: 1.1rem;
-    color: #fff;
-}
-
-[data-theme="brutalist"] .role-title {
-    color: #000;
+    font-size: 1.2rem;
 }
 
 .role-dates {
     margin: 0.25rem 0 1rem;
-    font-size: 0.85rem;
 }
 
 .role-summary {
-    font-size: 0.95rem;
-    color: #aaa;
-}
-
-.section {
-    margin-bottom: 4rem;
+    font-size: 1rem;
 }
 
 /* Blog Styles */
@@ -368,20 +156,13 @@ a:hover {
 }
 
 .post-list-compact a {
-    color: var(--text-color);
-    opacity: 0.9;
-    font-size: 1rem;
-    border: none;
-}
-
-.post-list-compact a:hover {
-    color: var(--secondary-accent);
+    font-size: 1.1rem;
 }
 
 .post-date-compact {
     font-family: monospace;
     font-size: 0.8rem;
-    opacity: 0.5;
+    opacity: 0.6;
     margin-left: 0.5rem;
 }
 
@@ -399,6 +180,73 @@ a:hover {
     border-top: 1px solid var(--border-color);
 }
 
+/* Projects & Background Refinement */
+.project-details {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.project-details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+}
+
+.project-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-details summary::after {
+    content: '+';
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.project-details[open] summary::after {
+    content: '-';
+}
+
+.project-company {
+    margin-left: auto;
+    margin-right: 1.5rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.project-content {
+    padding: 1rem 0;
+    font-size: 1rem;
+}
+
+.background-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    .background-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.minimal-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.minimal-list li {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--border-color);
+}
+
 ul {
     padding-left: 1.2rem;
 }
@@ -412,14 +260,15 @@ footer {
     padding: 4rem 0;
     font-size: 0.8rem;
     border-top: 1px solid var(--border-color);
-    color: var(--text-color);
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 @media (max-width: 600px) {
     .container {
         padding: 1rem;
     }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
 }
 
 /* Theme Switcher UI */
@@ -435,66 +284,23 @@ footer {
 
 .icon-toggle {
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     color: var(--text-color);
     padding: 0.5rem;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .icon-toggle:hover {
-    border-color: var(--secondary-accent);
+    background: var(--text-color);
+    color: var(--bg-color);
 }
 
-[data-theme="brutalist-dark"] .sun-icon,
-[data-theme="doom"] .sun-icon,
-[data-theme="terminal"] .sun-icon,
-[data-theme="glass"] .sun-icon,
-[data-theme="default"] .sun-icon {
-    display: inline;
-}
-
-[data-theme="brutalist-dark"] .moon-icon,
-[data-theme="doom"] .moon-icon,
-[data-theme="terminal"] .moon-icon,
-[data-theme="glass"] .moon-icon,
-[data-theme="default"] .moon-icon {
-    display: none;
-}
-
-[data-theme="brutalist"] .sun-icon {
-    display: none;
-}
-
-[data-theme="brutalist"] .moon-icon {
-    display: inline;
-}
-
-.theme-switch-container {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: monospace;
-    font-size: 0.8rem;
-}
-
-.theme-switch-container select {
-    background: transparent;
-    color: inherit;
-    border: none;
-    font-family: inherit;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-.theme-switch-container select:focus {
-    outline: none;
-}
+[data-theme="brutalist-dark"] .sun-icon { display: inline; }
+[data-theme="brutalist-dark"] .moon-icon { display: none; }
+[data-theme="brutalist"] .sun-icon { display: none; }
+[data-theme="brutalist"] .moon-icon { display: inline; }
