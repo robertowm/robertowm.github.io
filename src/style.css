@@ -1,22 +1,22 @@
 :root {
     /* Refined Minimalist Synthwave */
     --bg-color: #050505;
-    --text-color: #d1d1d1;
+    --text-color: #f0f0f0;
     --accent-color: #ff00ff; /* Neon Magenta - used sparingly */
     --secondary-accent: #00ffff; /* Neon Cyan - used sparingly */
-    --card-bg: #0f0f0f;
-    --border-color: #222;
+    --card-bg: #0a0a0a;
+    --border-color: #1a1a1a;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Doom (Apocalyptic) Theme Overrides */
 [data-theme="doom"] {
-    --bg-color: #0a0a0a;
-    --text-color: #999;
-    --accent-color: #7a0000; /* Dried Blood Red */
+    --bg-color: #080000;
+    --text-color: #e0d0d0;
+    --accent-color: #8b0000; /* Deep Red */
     --secondary-accent: #ff4500; /* Ember Orange */
-    --card-bg: #111;
-    --border-color: #331111;
+    --card-bg: #120000;
+    --border-color: #400;
 }
 
 [data-theme="doom"] h1, 
@@ -32,7 +32,7 @@
 
 /* Brutalist Theme Overrides */
 [data-theme="brutalist"] {
-    --bg-color: #fff;
+    --bg-color: #fcfcfc;
     --text-color: #000;
     --accent-color: #000;
     --secondary-accent: #000;
@@ -131,7 +131,7 @@
 /* Glass Theme Overrides */
 [data-theme="glass"] {
     --bg-color: #0a0e17;
-    --text-color: #fff;
+    --text-color: #f0f0f0;
     --accent-color: #ff00ff;
     --secondary-accent: #00ffff;
     --card-bg: rgba(255, 255, 255, 0.05);
@@ -204,7 +204,8 @@ a:hover {
 
 .bio {
     font-size: 1.1rem;
-    color: #aaa;
+    color: var(--text-color);
+    opacity: 0.8;
     margin-top: 2rem;
 }
 
@@ -234,7 +235,6 @@ a:hover {
 
 ul {
     padding-left: 1.2rem;
-    color: #aaa;
 }
 
 li {
@@ -246,7 +246,8 @@ footer {
     padding: 4rem 0;
     font-size: 0.8rem;
     border-top: 1px solid var(--border-color);
-    color: #555;
+    color: var(--text-color);
+    opacity: 0.5;
 }
 
 @media (max-width: 600px) {
