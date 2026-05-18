@@ -256,15 +256,62 @@ footer {
 }
 
 /* Theme Switcher UI */
-.theme-switch-container {
+.top-controls {
     position: fixed;
     top: 1rem;
     right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.icon-toggle {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     color: var(--text-color);
     padding: 0.5rem;
-    z-index: 1000;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.icon-toggle:hover {
+    border-color: var(--secondary-accent);
+}
+
+[data-theme="brutalist-dark"] .sun-icon,
+[data-theme="doom"] .sun-icon,
+[data-theme="terminal"] .sun-icon,
+[data-theme="glass"] .sun-icon,
+[data-theme="default"] .sun-icon {
+    display: inline;
+}
+
+[data-theme="brutalist-dark"] .moon-icon,
+[data-theme="doom"] .moon-icon,
+[data-theme="terminal"] .moon-icon,
+[data-theme="glass"] .moon-icon,
+[data-theme="default"] .moon-icon {
+    display: none;
+}
+
+[data-theme="brutalist"] .sun-icon {
+    display: none;
+}
+
+[data-theme="brutalist"] .moon-icon {
+    display: inline;
+}
+
+.theme-switch-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
