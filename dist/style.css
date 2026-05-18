@@ -358,40 +358,31 @@ a:hover {
 }
 
 /* Blog Styles */
-.post-list {
+.post-list-compact {
     list-style: none;
     padding: 0;
 }
 
-.post-item {
-    margin-bottom: 1rem;
+.post-list-compact li {
+    margin-bottom: 0.5rem;
 }
 
-.post-link {
-    display: flex;
-    gap: 2rem;
-    align-items: baseline;
-    border-bottom: 1px solid transparent;
+.post-list-compact a {
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 1rem;
+    border: none;
 }
 
-.post-link:hover {
-    border-bottom: 1px solid var(--secondary-accent);
+.post-list-compact a:hover {
+    color: var(--secondary-accent);
 }
 
-.post-date {
+.post-date-compact {
     font-family: monospace;
     font-size: 0.8rem;
-    opacity: 0.6;
-    min-width: 150px;
-}
-
-.post-title {
-    font-weight: bold;
-    color: #fff;
-}
-
-[data-theme="brutalist"] .post-title {
-    color: #000;
+    opacity: 0.5;
+    margin-left: 0.5rem;
 }
 
 .markdown-body {
