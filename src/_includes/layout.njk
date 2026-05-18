@@ -21,6 +21,13 @@
     </script>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>{{ profile.full_name }}</h1>
+            <p class="neon-text">{{ profile.address }}</p>
+        </div>
+    </header>
+
     <nav class="section-nav">
         <div class="container nav-flex">
             <div class="nav-links">
@@ -40,13 +47,6 @@
             </button>
         </div>
     </nav>
-
-    <header>
-        <div class="container">
-            <h1>{{ profile.full_name }}</h1>
-            <p class="neon-text">{{ profile.address }}</p>
-        </div>
-    </header>
 
     <main class="container">
         {{ content | safe }}
