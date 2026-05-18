@@ -324,28 +324,42 @@ footer {
     z-index: 1000;
 }
 
-.icon-toggle {
+.brutalist-switch {
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     color: var(--text-color);
-    padding: 0.25rem 0.75rem;
+    padding: 0;
     cursor: pointer;
     font-family: monospace;
     font-size: 0.8rem;
     font-weight: bold;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
     border-radius: 0;
-    text-transform: uppercase;
 }
 
-.icon-toggle:hover {
-    background: var(--text-color);
+.switch-label {
+    padding: 0.25rem 0.5rem;
+    border-right: 2px solid var(--border-color);
+    opacity: 0.6;
+}
+
+.switch-opt {
+    padding: 0.25rem 0.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.switch-opt:last-child {
+    border-left: 2px solid var(--border-color);
+}
+
+[data-theme="brutalist"] .opt-light,
+[data-theme="brutalist-dark"] .opt-dark {
+    background-color: var(--text-color);
     color: var(--bg-color);
 }
 
-[data-theme="brutalist-dark"] .sun-icon { display: inline; }
-[data-theme="brutalist-dark"] .moon-icon { display: none; }
-[data-theme="brutalist"] .sun-icon { display: none; }
-[data-theme="brutalist"] .moon-icon { display: inline; }
+.brutalist-switch:hover {
+    box-shadow: 4px 4px 0 var(--border-color);
+}
