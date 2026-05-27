@@ -40,6 +40,8 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 /* Section Navigation */
@@ -74,9 +76,26 @@ body {
     background: var(--card-bg);
 }
 
-.section-nav a:hover {
+.section-nav a.active {
     background: var(--text-color);
     color: var(--bg-color);
+}
+
+@media (hover: hover) {
+    .section-nav a:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
+    }
+}
+
+/* Global Markdown Image Styles */
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid var(--border-color);
+    box-shadow: 6px 6px 0 var(--border-color);
+    display: block;
+    margin: 2rem auto;
 }
 
 .container {
@@ -114,15 +133,111 @@ h3 {
 }
 
 a {
-    color: inherit;
+    color: var(--text-color);
     text-decoration: none;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--text-color);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
+}
+
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+details:focus-visible {
+    outline: 4px solid var(--text-color);
+    outline-offset: 4px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+button:focus-visible svg {
+    color: var(--bg-color);
+}
+
+/* Focus styles for theme toggle inversion */
+[data-theme="brutalist"] .brutalist-switch:focus-visible .opt-light,
+[data-theme="brutalist-dark"] .brutalist-switch:focus-visible .opt-dark {
+    filter: invert(0);
+}
+
+.header-title-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-title-link {
+    border: none !important;
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-title-link:hover {
+    background: none !important;
+    color: inherit !important;
+}
+
+.header-photo {
+    display: flex; /* Ensure it stays flex as an anchor tag */
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border: 4px solid var(--border-color) !important; /* Keep original border */
+    box-shadow: 6px 6px 0 var(--border-color);
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transform: rotate(3deg); /* Slight tilt for Brutalist character */
+    transition: transform 0.2s ease;
+}
+
+.header-photo:hover {
+    transform: rotate(0deg) scale(1.05);
+    background-color: #fff !important;
+}
+
+[data-theme="brutalist-dark"] .header-photo:hover {
+    background-color: #f0f0f0 !important;
+}
+
+.header-photo svg {
+    width: 110px;
+    height: 110px;
+    color: #000; /* Always black SVG */
+}
+
+[data-theme="brutalist-dark"] .header-photo {
+    background-color: #f0f0f0; /* Slightly off-white for dark mode comfort */
+    border-color: var(--border-color);
+    box-shadow: 6px 6px 0 var(--border-color);
+}
+
+@media (max-width: 600px) {
+    .header-title-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .header-photo {
+        width: 100px;
+        height: 100px;
+        transform: rotate(-2deg); /* Alternate tilt on mobile */
+    }
+    .header-photo svg {
+        width: 80px;
+        height: 80px;
+    }
+    .neon-text {
+        text-align: center;
+    }
 }
 
 .bio {
@@ -151,6 +266,19 @@ a:hover {
     scroll-margin-top: 6rem; /* Prevent header hiding under sticky nav */
 }
 
+/* Social Links in Header */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
 /* Work Experience Refinement */
 .experience-card {
     display: flex;
@@ -164,14 +292,52 @@ a:hover {
     padding-bottom: 0.5rem;
 }
 
-.role-entry {
+.role-details {
     margin-bottom: 2rem;
-    padding-left: 1.5rem;
-    border-left: 1px solid var(--border-color);
 }
 
-.role-entry:last-child {
+.role-details:last-child {
     margin-bottom: 0;
+}
+
+.role-summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    padding: 0.5rem 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.role-summary-header:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.role-summary-header:hover h4 {
+    color: var(--bg-color);
+}
+
+.role-summary-header::-webkit-details-marker {
+    display: none;
+}
+
+.role-summary-header::after {
+    content: '+';
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.role-details[open] .role-summary-header::after {
+    content: '-';
+}
+
+.role-info {
+    flex-grow: 1;
 }
 
 .role-title {
@@ -180,11 +346,27 @@ a:hover {
 }
 
 .role-dates {
-    margin: 0.25rem 0 1rem;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.role-content {
+    padding: 0.5rem 0 1.5rem 1.5rem;
+    border-left: 2px solid var(--border-color);
+}
+
+.project-content {
+    padding: 1rem 0;
+    font-size: 1rem;
 }
 
 .role-summary {
     font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.role-summary:last-child {
+    margin-bottom: 0;
 }
 
 /* Blog Styles */
@@ -235,6 +417,17 @@ a:hover {
     cursor: pointer;
     font-weight: bold;
     list-style: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.project-details summary:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.project-details summary:hover .project-company {
+    color: var(--bg-color);
+    opacity: 1;
 }
 
 .project-details summary::-webkit-details-marker {
@@ -258,11 +451,6 @@ a:hover {
     font-size: 0.8rem;
     opacity: 0.6;
     text-transform: uppercase;
-}
-
-.project-content {
-    padding: 1rem 0;
-    font-size: 1rem;
 }
 
 .background-grid {
@@ -309,8 +497,9 @@ footer {
     .container {
         padding: 1rem;
     }
-    h1 { font-size: 3rem; }
+    h1 { font-size: 3rem; text-align: center; }
     h2 { font-size: 2rem; }
+    .social-links { text-align: center; }
 }
 
 /* Theme Switcher UI */
@@ -339,6 +528,21 @@ footer {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0;
+    }
+    .nav-links a {
+        text-align: center;
+        display: block;
+        padding: 0.5rem;
+    }
 }
 
 .nav-home {

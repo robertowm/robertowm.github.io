@@ -1,0 +1,18 @@
+---
+layout: layout.njk
+title: All Posts
+---
+
+<section class="section" style="margin-top: 2rem;">
+    <h2>All Posts</h2>
+    <ul class="post-list-compact" style="margin-bottom: 2rem;">
+    {% for post in collections.posts %}
+        <li>
+            <a href="{{ post.url }}">
+                {{ post.data.title }} <span class="post-date-compact">— {{ post.date | dateFilter }}</span>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="/">&larr; Back to Home</a>
+</section>

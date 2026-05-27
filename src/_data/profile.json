@@ -4,7 +4,7 @@
   "email": "robertowm@gmail.com",
   "profile_url": "https://robertowm.github.io",
   "cv": "/uploads/cv-roberto-weidmann-menezes.pdf",
-  "photo": "/uploads/profile.png",
+  "photo": "/static/images/photo.svg",
   "links": [
     {
       "name": "LinkedIn",
@@ -20,7 +20,8 @@
     }
   ],
   "bio": [
-    "Computer scientist with experience in design and development of data-oriented solutions. Interested in big data, search engines, data pipelines, data analysis, software engineering and distributed systems.",
-    "Currently, I am a Senior Staff Software Engineer (Architecture) at Float, a global leader in resource scheduling tool. As a remote-first company, everyone is working remotely across the world."
+    "Computer Scientist and Senior Staff Software Engineer experienced in driving backend strategy and implementing complex, search and data-oriented solutions. Proven capability in leading cross-functional initiatives, end-to-end project ownership, rapid prototyping, and scaling distributed architectures for remote-first, global tech companies.",
+    "Currently, I am a Senior Staff Software Engineer (Architecture and Data) at Float, a global leader in resource scheduling tools. As a remote-first company, everyone is working remotely across the world.",
+    "**Specialties**: Development of scalable backend and search solutions; Autonomous scoping and asynchronous execution; Complex problem-solving balancing technical trade-offs with product impact; Design of real-time data pipelines and streaming infrastructure; Architectural strategy and domain ownership of core platform services."
   ]
 }

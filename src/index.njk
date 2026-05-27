@@ -4,9 +4,11 @@ title: Home
 ---
 
 <section class="bio section">
-    {% for paragraph in profile.bio %}
-        <p>{{ paragraph | md | safe }}</p>
-    {% endfor %}
+    <div class="bio-text">
+        {% for paragraph in profile.bio %}
+            <p>{{ paragraph | md | safe }}</p>
+        {% endfor %}
+    </div>
 </section>
 
 <section id="work" class="section">
@@ -16,13 +18,19 @@ title: Home
             <h3 class="company-name">{% if entry.url != "#" %}<a href="{{ entry.url }}">{% endif %}{{ entry.company }}{% if entry.url != "#" %}</a>{% endif %}</h3>
             
             {% for role in entry.roles %}
-                <div class="role-entry">
-                    <h4 class="role-title">{{ role.position }}</h4>
-                    <p class="neon-text role-dates">{{ role.start_year }} - {{ role.end_year or "Present" }}</p>
-                    {% for p in role.summary %}
-                        <p class="role-summary">{{ p | md | safe }}</p>
-                    {% endfor %}
-                </div>
+                <details class="role-details" open>
+                    <summary class="role-summary-header">
+                        <div class="role-info">
+                            <h4 class="role-title">{{ role.position }}</h4>
+                            <p class="neon-text role-dates">{{ role.start_year }} - {{ role.end_year or "Present" }}</p>
+                        </div>
+                    </summary>
+                    <div class="role-content">
+                        {% for p in role.summary %}
+                            <p class="role-summary">{{ p | md | safe }}</p>
+                        {% endfor %}
+                    </div>
+                </details>
             {% endfor %}
         </div>
     {% endfor %}
@@ -33,13 +41,18 @@ title: Home
     <h2>Latest Posts</h2>
     <ul class="post-list-compact">
     {% for post in collections.posts %}
+        {% if loop.index <= 5 %}
         <li>
             <a href="{{ post.url }}">
                 {{ post.data.title }} <span class="post-date-compact">— {{ post.date | dateFilter }}</span>
             </a>
         </li>
+        {% endif %}
     {% endfor %}
     </ul>
+    {% if collections.posts.length > 0 %}
+        <div style="margin-top: 1.5rem;"><a href="/posts/">View all posts &rarr;</a></div>
+    {% endif %}
 </section>
 {% endif %}
 

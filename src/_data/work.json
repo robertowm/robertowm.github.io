@@ -4,11 +4,15 @@
     "url": "https://www.float.com/",
     "roles": [
       {
-        "position": "Senior Staff Software Engineer (Architecture)",
+        "position": "Senior Staff Software Engineer (Architecture and Data)",
         "start_year": "2024",
         "end_year": null,
         "summary": [
-          "Current role focused on high-level architecture and technical strategy at a global scale."
+          "Lead architecture and strategy decisions.",
+          "Prototyping and developing core solutions.",
+          "Supported key initiatives across Product and Platform squads.",
+          "Tech owner of CDC architecture, enabling real time synchronization across services.",
+          "Former tech owner of integrations and reports."
         ]
       },
       {
@@ -27,7 +31,7 @@
         "end_year": "2022",
         "summary": [
           "Focused on back-end development for a remote-first company.",
-          "Main responsibility was integrating Float.com with external services, using NodeJS, React, RabbitMQ, MongoDB, Redis, and MySQL."
+          "Main responsibility was integrating [Float.com](https://www.float.com/) with external services, using NodeJS, React, RabbitMQ, MongoDB, Redis, and MySQL."
         ]
       }
     ]
