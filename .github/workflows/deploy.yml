@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - feature/2026-update # I'll use the current branch for testing, user should change to main later if desired.
+      - dev
 
 permissions:
   contents: read
