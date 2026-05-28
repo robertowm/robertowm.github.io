@@ -1,8 +1,7 @@
 ---
 title: Migrating to Eleventy
-date: 2026-05-18
+date: 2026-05-27
 layout: post.njk
-draft: true
 ---
 
 My latest project was to reimplement my personal webpage again. For a long time, I've been using GatsbyJS, and while it was fine for a while, it eventually became too complex for what I actually needed. Plus, GitHub was constantly complaining about security vulnerabilities in outdated libraries, and I wasn't particularly keen on spending hours upgrading a complex React-based ecosystem just for a static site.
