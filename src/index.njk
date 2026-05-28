@@ -1,0 +1,100 @@
+---
+layout: layout.njk
+title: Home
+---
+
+<section class="bio section">
+    <div class="bio-text">
+        {% for paragraph in profile.bio %}
+            <p>{{ paragraph | md | safe }}</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="work" class="section">
+    <h2>Work Experience</h2>
+    {% for entry in work %}
+        <div class="card experience-card">
+            <h3 class="company-name">{% if entry.url != "#" %}<a href="{{ entry.url }}">{% endif %}{{ entry.company }}{% if entry.url != "#" %}</a>{% endif %}</h3>
+            
+            {% for role in entry.roles %}
+                <details class="role-details" open>
+                    <summary class="role-summary-header">
+                        <div class="role-info">
+                            <h4 class="role-title">{{ role.position }}</h4>
+                            <p class="neon-text role-dates">{{ role.start_year }} - {{ role.end_year or "Present" }}</p>
+                        </div>
+                    </summary>
+                    <div class="role-content">
+                        {% for p in role.summary %}
+                            <p class="role-summary">{{ p | md | safe }}</p>
+                        {% endfor %}
+                    </div>
+                </details>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</section>
+
+{% if collections.posts.length > 0 %}
+<section id="writing" class="section">
+    <h2>Latest Posts</h2>
+    <ul class="post-list-compact">
+    {% for post in collections.posts %}
+        {% if loop.index <= 5 %}
+        <li>
+            <a href="{{ post.url }}">
+                {{ post.data.title }} <span class="post-date-compact">— {{ post.date | dateFilter }}</span>
+            </a>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    {% if collections.posts.length > 0 %}
+        <div style="margin-top: 1.5rem;"><a href="/posts/">View all posts &rarr;</a></div>
+    {% endif %}
+</section>
+{% endif %}
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    {% for project in projects %}
+        <details class="project-details">
+            <summary>
+                <span class="project-title">{{ project.name }} ({{ project.year }})</span>
+                <span class="project-company">{{ project.company }}</span>
+            </summary>
+            <div class="project-content">
+                {% for p in project.content %}
+                    <p>{{ p | md | safe }}</p>
+                {% endfor %}
+                {% if project.url %}
+                    <p><a href="{{ project.url }}" target="_blank">View Project &rarr;</a></p>
+                {% endif %}
+            </div>
+        </details>
+    {% endfor %}
+</section>
+
+<section id="background" class="section">
+    <h2>Background</h2>
+    <div class="background-grid">
+        <div class="background-group">
+            <h3>Education</h3>
+            <ul class="minimal-list">
+            {% for edu in qualifications.education %}
+                <li><strong>{{ edu.title }}</strong>, {{ edu.institution }} ({{ edu.start_year }} - {{ edu.end_year }})</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="background-group">
+            <h3>Certifications</h3>
+            <ul class="minimal-list">
+            {% for cert in qualifications.certifications %}
+                <li><a href="{{ cert.url }}">{{ cert.name }}</a> - {{ cert.institutions | join(', ') }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

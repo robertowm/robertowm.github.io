@@ -1,0 +1,26 @@
+{
+  "full_name": "Roberto Weidmann Menezes",
+  "address": "Melbourne, VIC, Australia",
+  "email": "robertowm@duck.com",
+  "profile_url": "https://robertowm.github.io",
+  "photo": "/static/images/photo.svg",
+  "links": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/robertowm"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/robertowm"
+    },
+    {
+      "name": "Your Acclaim",
+      "url": "https://www.youracclaim.com/user/robertowm"
+    }
+  ],
+  "bio": [
+    "Computer Scientist and Senior Staff Software Engineer experienced in driving backend strategy and implementing complex, search and data-oriented solutions. Proven capability in leading cross-functional initiatives, end-to-end project ownership, rapid prototyping, and scaling distributed architectures for remote-first, global tech companies.",
+    "Currently, I am a Senior Staff Software Engineer (Architecture and Data) at Float, a global leader in resource scheduling tools. As a remote-first company, everyone is working remotely across the world.",
+    "**Specialties**: Development of scalable backend and search solutions; Autonomous scoping and asynchronous execution; Complex problem-solving balancing technical trade-offs with product impact; Design of real-time data pipelines and streaming infrastructure; Architectural strategy and domain ownership of core platform services."
+  ]
+}

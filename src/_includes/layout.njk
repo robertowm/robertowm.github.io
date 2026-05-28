@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.full_name }} | {{ title }}</title>
+    <meta name="description" content="{{ profile.bio[0] | striptags | escape }}">
+    <link rel="icon" type="image/png" href="/static/images/icon.png">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="{{ profile.full_name }} | {{ title }}">
+    <meta property="og:description" content="{{ profile.bio[0] | striptags | escape }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/static/images/icon.png">
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/archivoblack/v23/HTxqL289NzCGg4MzN6KJ7eW6CYyF_jzx13E.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', prefersDark ? 'brutalist-dark' : 'brutalist');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="top-controls">
+        <button id="brutalist-toggle" class="brutalist-switch" title="Toggle Dark/Light" aria-label="Toggle dark and light themes">
+            <span class="switch-opt opt-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </span>
+            <span class="switch-opt opt-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+        </button>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-title-row">
+                <a href="/" class="header-title-link">
+                    <h1>{{ profile.full_name }}</h1>
+                </a>
+                <a href="/" class="header-photo">
+                    {% include "photo.svg" %}
+                </a>
+            </div>
+            <p class="neon-text">{{ profile.address }}</p>
+            <div class="social-links">
+                <a href="{{ profile.links[0].url }}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="section-nav">
+        <div class="container nav-flex">
+            <a href="/" class="nav-home">{{ profile.full_name }}</a>
+            <div class="nav-links">
+                <a href="/#work">Work</a>
+                <a href="/#writing">Writing</a>
+                <a href="/#projects">Projects</a>
+                <a href="/#background">Background</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        {{ content | safe }}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{ currentYear }} {{ profile.full_name }}</p>
+            <p>Built with 11ty - Minimalist & Fast</p>
+        </div>
+    </footer>
+
+    <script>
+        const html = document.documentElement;
+        const brutalistToggle = document.getElementById('brutalist-toggle');
+        const sectionNav = document.querySelector('.section-nav');
+        const header = document.querySelector('header');
+        
+        // Dark/Light Toggle Logic
+        brutalistToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const next = current === 'brutalist-dark' ? 'brutalist' : 'brutalist-dark';
+            
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        // Sticky Name Visibility Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sectionNav.classList.remove('is-sticky');
+                } else {
+                    sectionNav.classList.add('is-sticky');
+                }
+            });
+        }, { threshold: 0 });
+
+        observer.observe(header);
+
+        // Robust ScrollSpy Logic for Navbar
+        const sections = document.querySelectorAll('main.container > section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function updateActiveLink() {
+            let currentSectionId = "";
+            const scrollPosition = window.scrollY + 120; // Offset for sticky nav + buffer
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSectionId = section.getAttribute("id");
+                }
+            });
+
+            // Special case for bottom of page (Background section usually)
+            if (sections.length > 0 && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                currentSectionId = sections[sections.length - 1].getAttribute("id");
+            }
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (currentSectionId && link.getAttribute("href").includes(`#${currentSectionId}`)) {
+                    link.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", updateActiveLink);
+        window.addEventListener("resize", updateActiveLink);
+        updateActiveLink(); // Initial check
+    </script>
+</body>
+</html>
