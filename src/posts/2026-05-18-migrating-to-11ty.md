@@ -2,6 +2,7 @@
 title: Migrating to Eleventy
 date: 2026-05-18
 layout: post.njk
+draft: true
 ---
 
 Today I migrated my personal page from Gatsby to **Eleventy**.

@@ -39,7 +39,10 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/*.md").reverse();
+    const isDev = process.env.ELEVENTY_RUN_MODE === "serve" || process.env.NODE_ENV === "development";
+    return collectionApi.getFilteredByGlob("src/posts/*.md")
+      .filter(post => isDev || !post.data.draft)
+      .reverse();
   });
 
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
