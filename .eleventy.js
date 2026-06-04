@@ -48,7 +48,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
   // Pass-through static assets
-  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy({ "static/images": "static/images" });
   eleventyConfig.addPassthroughCopy({ "static/uploads": "uploads" });
   // We'll handle style.css via a template for minification
   // eleventyConfig.addPassthroughCopy("src/style.css");
