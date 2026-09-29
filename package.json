@@ -25,6 +25,6 @@
     "html-minifier-terser": "^7.2.0"
   },
   "overrides": {
-    "markdown-it": "^15.0.0"
+    "markdown-it": "^15.0.2"
   }
 }
